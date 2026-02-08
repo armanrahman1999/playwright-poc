@@ -32,7 +32,7 @@ export async function executeJobInBackground(job: Job): Promise<void> {
         timeout: 30000,
         screenshotOnFailure: true,
         captureConsole: true,
-      });
+      }, job.id);
 
       // Update job with results
       jobStore.updateJob(job.id, {

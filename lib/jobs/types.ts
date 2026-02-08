@@ -3,6 +3,8 @@
  * Handles test execution job management
  */
 
+import { UIValidationReport } from "../validation/types";
+
 export type JobStatus = "pending" | "running" | "completed" | "failed";
 
 export interface TestResult {
@@ -14,6 +16,7 @@ export interface TestResult {
   error?: string;
   url?: string;
   timestamp: string;
+  validationReport?: UIValidationReport;
 }
 
 export interface Job {

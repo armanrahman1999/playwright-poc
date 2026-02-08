@@ -3,32 +3,21 @@ import fs from "fs";
 import path from "path";
 
 /**
- * GET /api/screenshot?filename=screenshot-123456.png
+ * GET /api/screenshot?path=/absolute/path/to/screenshot.png
  * 
  * Serves screenshot files from the test-results directory
  */
 export async function GET(request: NextRequest) {
   try {
-    // Get filename from query params
-    const filename = request.nextUrl.searchParams.get("filename");
+    // Get path from query params
+    const filePath = request.nextUrl.searchParams.get("path");
 
-    if (!filename) {
+    if (!filePath) {
       return NextResponse.json(
-        { error: "Missing filename parameter" },
+        { error: "Missing path parameter" },
         { status: 400 }
       );
     }
-
-    // Validate filename - prevent path traversal attacks
-    if (filename.includes("..") || filename.includes("/") || filename.includes("\\")) {
-      return NextResponse.json(
-        { error: "Invalid filename" },
-        { status: 400 }
-      );
-    }
-
-    // Construct safe file path
-    const filePath = path.join(process.cwd(), "test-results", filename);
 
     // Check if file exists
     if (!fs.existsSync(filePath)) {

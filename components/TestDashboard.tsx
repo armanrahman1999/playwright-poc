@@ -14,13 +14,16 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Job, JobStatus, TestResult } from "@/lib/jobs/types";
+import LiveTestViewer from "./LiveTestViewer";
+import SplitViewDashboard from "./SplitViewDashboard";
 
 interface JobWithResult extends Job {
   result?: TestResult;
 }
 
+const TARGET_URL = "https://cloud.seliseblocks.com/login";
+
 export default function TestDashboard() {
-  const [targetUrl, setTargetUrl] = useState("https://cloud.seliseblocks.com/login");
   const [jobs, setJobs] = useState<JobWithResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -53,20 +56,15 @@ export default function TestDashboard() {
   };
 
   // Submit new test
-  const handleSubmitTest = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmitTest = async () => {
     setError("");
     setLoading(true);
 
     try {
-      if (!targetUrl.trim()) {
-        throw new Error("Please enter a target URL");
-      }
-
       const response = await fetch("/api/run-test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ targetUrl: targetUrl.trim() }),
+        body: JSON.stringify({ targetUrl: TARGET_URL }),
       });
 
       if (!response.ok) {
@@ -75,7 +73,6 @@ export default function TestDashboard() {
       }
 
       const data = await response.json();
-      setTargetUrl("");
       setSelectedJobId(data.jobId);
 
       // Refresh jobs list
@@ -143,42 +140,45 @@ export default function TestDashboard() {
           </p>
         </div>
 
+        {/* Live Test Execution - Full Width when running */}
+        {selectedJob && selectedJob.status === "running" && (
+          <div className="bg-slate-800 rounded-lg shadow-lg border border-slate-700 overflow-hidden mb-6">
+            <div className="p-6 border-b border-slate-700">
+              <h2 className="text-xl font-semibold text-white">
+                Live Test Execution
+              </h2>
+            </div>
+            <div className="p-6">
+              <SplitViewDashboard 
+                jobId={selectedJob.id} 
+                targetUrl={selectedJob.targetUrl}
+                isRunning={selectedJob.status === "running"}
+              />
+            </div>
+          </div>
+        )}
+
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Left: Input Form */}
-          <div className="lg:col-span-1">
+          {/* Left: Control Panel */}
+          <div className="lg:col-span-1 space-y-6">
             <div className="bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-700">
               <h2 className="text-xl font-semibold text-white mb-4">
-                Start New Test
+                Test Control
               </h2>
 
-              <form onSubmit={handleSubmitTest} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Target URL
-                  </label>
-                  <input
-                    type="url"
-                    value={targetUrl}
-                    onChange={(e) => setTargetUrl(e.target.value)}
-                    placeholder="https://cloud.seliseblocks.com/login"
-                    className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
-                  />
+              {error && (
+                <div className="p-3 bg-red-900 border border-red-700 rounded text-red-200 text-sm mb-4">
+                  {error}
                 </div>
+              )}
 
-                {error && (
-                  <div className="p-3 bg-red-900 border border-red-700 rounded text-red-200 text-sm">
-                    {error}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 disabled:cursor-not-allowed text-white font-medium rounded transition"
-                >
-                  {loading ? "Starting..." : "Start Test"}
-                </button>
-              </form>
+              <button
+                onClick={handleSubmitTest}
+                disabled={loading}
+                className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 disabled:cursor-not-allowed text-white font-medium rounded transition"
+              >
+                {loading ? "Running..." : "Run Test"}
+              </button>
 
               <div className="mt-6 pt-6 border-t border-slate-700">
                 <h3 className="text-sm font-semibold text-slate-300 mb-3">
@@ -359,6 +359,39 @@ export default function TestDashboard() {
                                 </li>
                               ))}
                             </ul>
+                          </div>
+                        </div>
+                      )}
+
+                      {selectedJob.result.validationReport && (
+                        <div>
+                          <h3 className="text-sm font-semibold text-slate-300 mb-2">
+                            UI Validation Results
+                          </h3>
+                          <div className="bg-slate-900 rounded p-3 space-y-2">
+                            <div className="grid grid-cols-2 gap-2 text-xs">
+                              <div>
+                                <p className="text-slate-400">Total Tests:</p>
+                                <p className="text-white font-semibold">{selectedJob.result.validationReport.totalTests}</p>
+                              </div>
+                              <div>
+                                <p className="text-slate-400">Passed:</p>
+                                <p className="text-green-400 font-semibold">{selectedJob.result.validationReport.passedTests}</p>
+                              </div>
+                              <div>
+                                <p className="text-slate-400">Failed:</p>
+                                <p className="text-red-400 font-semibold">{selectedJob.result.validationReport.failedTests}</p>
+                              </div>
+                              <div>
+                                <p className="text-slate-400">Critical:</p>
+                                <p className={selectedJob.result.validationReport.criticalFailures === 0 ? "text-green-400" : "text-red-400"}>
+                                  {selectedJob.result.validationReport.criticalFailures}
+                                </p>
+                              </div>
+                            </div>
+                            <div className={`p-2 rounded text-xs ${selectedJob.result.validationReport.overallPassed ? "bg-green-900 text-green-200" : "bg-red-900 text-red-200"}`}>
+                              {selectedJob.result.validationReport.overallPassed ? "✓ All validations passed" : "✗ Some validations failed"}
+                            </div>
                           </div>
                         </div>
                       )}

@@ -5,6 +5,7 @@
  * - Launch isolated browser contexts
  * - Run tests against remote URLs
  * - Capture test results (screenshots, console errors, etc.)
+ * - Run UI validation tests
  * - Handle timeouts safely
  * 
  * All Playwright operations happen server-side ONLY.
@@ -15,6 +16,8 @@ import { chromium, Browser, BrowserContext, Page } from "@playwright/test";
 import fs from "fs";
 import path from "path";
 import { TestResult } from "../jobs/types";
+import { testEventBus } from "../jobs/events";
+import { runValidationTests } from "../validation/executor";
 
 interface TestRunnerConfig {
   headless?: boolean;
@@ -62,7 +65,8 @@ async function launchBrowser(): Promise<{
  */
 async function runTest(
   targetUrl: string,
-  config: TestRunnerConfig = {}
+  config: TestRunnerConfig = {},
+  jobId?: string
 ): Promise<TestResult> {
   const {
     headless = true,
@@ -88,6 +92,15 @@ async function runTest(
     state.browser = browser;
     state.context = context;
 
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "started",
+        timestamp: new Date().toISOString(),
+        data: { targetUrl },
+      });
+    }
+
     // Create new page
     const page = await context.newPage();
     state.page = page;
@@ -104,6 +117,15 @@ async function runTest(
             level: msg.type(),
             message: msg.text(),
           });
+
+          if (jobId) {
+            testEventBus.emitTestEvent({
+              jobId,
+              type: "console-error",
+              timestamp: new Date().toISOString(),
+              data: { level: msg.type(), message: msg.text() },
+            });
+          }
         }
       });
 
@@ -113,10 +135,28 @@ async function runTest(
           level: "error",
           message: `Uncaught: ${error.message}`,
         });
+
+        if (jobId) {
+          testEventBus.emitTestEvent({
+            jobId,
+            type: "console-error",
+            timestamp: new Date().toISOString(),
+            data: { level: "error", message: `Uncaught: ${error.message}` },
+          });
+        }
       });
     }
 
     // Navigate to URL
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "navigating",
+        timestamp: new Date().toISOString(),
+        data: { targetUrl },
+      });
+    }
+
     const response = await page.goto(targetUrl, {
       waitUntil: "networkidle",
       timeout: timeout,
@@ -127,6 +167,38 @@ async function runTest(
 
     // Wait for any dynamic content to load
     await page.waitForLoadState("networkidle");
+
+    // Run UI validation tests
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "validation-started",
+        timestamp: new Date().toISOString(),
+        data: { message: "Starting UI validation tests..." },
+      });
+    }
+
+    let validationReport;
+    try {
+      validationReport = await runValidationTests(page);
+
+      if (jobId) {
+        testEventBus.emitTestEvent({
+          jobId,
+          type: "validation-complete",
+          timestamp: new Date().toISOString(),
+          data: {
+            totalTests: validationReport.totalTests,
+            passed: validationReport.passedTests,
+            failed: validationReport.failedTests,
+            report: validationReport,
+          },
+        });
+      }
+    } catch (validationError) {
+      console.error("Validation tests failed:", validationError);
+      // Continue even if validation fails - don't block test results
+    }
 
     // Take screenshot on success
     const screenshotPath = path.join(
@@ -144,16 +216,39 @@ async function runTest(
     await page.screenshot({ path: screenshotPath, fullPage: true });
     screenshots.push(screenshotPath);
 
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "screenshot",
+        timestamp: new Date().toISOString(),
+        data: { screenshotPath, success: true },
+      });
+    }
+
     const executionTimeMs = Date.now() - startTime;
 
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "completed",
+        timestamp: new Date().toISOString(),
+        data: {
+          passed: pageLoadSuccess && consoleErrors.length === 0,
+          executionTimeMs,
+          errorCount: consoleErrors.length,
+        },
+      });
+    }
+
     return {
-      passed: pageLoadSuccess && consoleErrors.length === 0,
+      passed: pageLoadSuccess && consoleErrors.length === 0 && (!validationReport || validationReport.overallPassed),
       pageLoadSuccess,
       consoleErrors,
       screenshots,
       executionTimeMs,
       url: targetUrl,
       timestamp: new Date().toISOString(),
+      validationReport,
     };
   } catch (error) {
     const executionTimeMs = Date.now() - startTime;
@@ -178,6 +273,15 @@ async function runTest(
       } catch (screenshotError) {
         console.error("Failed to capture error screenshot:", screenshotError);
       }
+    }
+
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "failed",
+        timestamp: new Date().toISOString(),
+        data: { error: errorMessage },
+      });
     }
 
     return {
