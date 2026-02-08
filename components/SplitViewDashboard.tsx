@@ -31,14 +31,19 @@ export default function SplitViewDashboard({
   const [showConsolePanel, setShowConsolePanel] = useState(true);
 
   useEffect(() => {
+    console.log("[SplitViewDashboard] Component mounted with jobId:", jobId);
+    
     // Connect to SSE stream
     const eventSource = new EventSource(
-      `/api/test-stream?jobId=${encodeURIComponent(jobId)}`
+      `/api/job-stream?jobId=${encodeURIComponent(jobId)}`
     );
+
+    console.log("[SplitViewDashboard] Connecting to SSE:", jobId);
 
     eventSource.onmessage = (event) => {
       try {
         const testEvent: TestEvent = JSON.parse(event.data);
+        console.log("[SplitViewDashboard] Received event:", testEvent.type, testEvent.data);
 
         switch (testEvent.type) {
           case "started":
@@ -50,12 +55,15 @@ export default function SplitViewDashboard({
             break;
 
           case "screenshot":
+            const screenshotPath = testEvent.data.screenshotPath;
+            console.log("[SplitViewDashboard] Screenshot event received:", screenshotPath);
             setCurrentAction("📸 Capturing page...");
-            if (testEvent.data.screenshotPath) {
-              const imagePath = `/api/screenshot?path=${encodeURIComponent(
-                testEvent.data.screenshotPath
-              )}`;
+            if (screenshotPath) {
+              const imagePath = `/api/screenshot?path=${encodeURIComponent(screenshotPath)}`;
+              console.log("[SplitViewDashboard] Setting image URL:", imagePath);
               setCurrentScreenshot(imagePath);
+            } else {
+              console.warn("[SplitViewDashboard] No screenshot path in event data");
             }
             break;
 
@@ -104,9 +112,11 @@ export default function SplitViewDashboard({
 
     eventSource.onerror = () => {
       console.error("SSE connection error");
+      setCurrentAction("❌ Connection lost");
     };
 
     return () => {
+      console.log("[SplitViewDashboard] Closing SSE connection");
       eventSource.close();
     };
   }, [jobId]);

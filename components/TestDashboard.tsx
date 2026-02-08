@@ -141,11 +141,11 @@ export default function TestDashboard() {
         </div>
 
         {/* Live Test Execution - Full Width when running */}
-        {selectedJob && selectedJob.status === "running" && (
+        {selectedJob && (
           <div className="bg-slate-800 rounded-lg shadow-lg border border-slate-700 overflow-hidden mb-6">
             <div className="p-6 border-b border-slate-700">
               <h2 className="text-xl font-semibold text-white">
-                Live Test Execution
+                {selectedJob.status === "running" ? "Live Test Execution" : "Test Replay / View"}
               </h2>
             </div>
             <div className="p-6">
@@ -405,7 +405,7 @@ export default function TestDashboard() {
                             {selectedJob.result.screenshots.map((screenshot, idx) => {
                               // Extract filename from full path
                               const filename = screenshot.split("\\").pop() || screenshot.split("/").pop() || screenshot;
-                              const screenshotUrl = `/api/screenshot?filename=${filename}`;
+                              const screenshotUrl = `/api/screenshot?path=${encodeURIComponent(screenshot)}`;
                               return (
                                 <div key={idx} className="bg-slate-900 rounded p-2">
                                   <p className="text-xs text-slate-400 mb-2 break-all">

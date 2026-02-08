@@ -325,5 +325,549 @@
       }
     },
     "completedAt": "2026-02-08T06:49:12.508Z"
+  },
+  {
+    "id": "a9fb08ab-0d42-4a18-9252-4e6a598cc646",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T08:20:59.319Z",
+    "startedAt": "2026-02-08T08:20:59.320Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770538865234-load.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770538865898-ready.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770538896184-final.png"
+      ],
+      "executionTimeMs": 36969,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:21:36.295Z",
+      "validationReport": {
+        "totalTests": 12,
+        "passedTests": 10,
+        "failedTests": 2,
+        "criticalFailures": 2,
+        "duration": 30146,
+        "results": [
+          {
+            "testId": "test-logo-visible",
+            "testName": "Logo is visible",
+            "passed": false,
+            "duration": 13,
+            "error": "Element not visible: img[alt*='logo'], img[alt*='Blocks'], .logo"
+          },
+          {
+            "testId": "test-login-form-visible",
+            "testName": "Login form is visible",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-email-input-visible",
+            "testName": "Email input field is visible",
+            "passed": true,
+            "duration": 7
+          },
+          {
+            "testId": "test-password-input-visible",
+            "testName": "Password input field is visible",
+            "passed": true,
+            "duration": 5
+          },
+          {
+            "testId": "test-login-button-visible",
+            "testName": "Login button is visible",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-page-title",
+            "testName": "Page has correct title",
+            "passed": true,
+            "duration": 5
+          },
+          {
+            "testId": "test-email-input-type",
+            "testName": "Email input has correct type",
+            "passed": false,
+            "duration": 30044,
+            "error": "Could not verify input type",
+            "expected": "email"
+          },
+          {
+            "testId": "test-password-input-type",
+            "testName": "Password input has correct type",
+            "passed": true,
+            "duration": 5,
+            "actual": "password",
+            "expected": "password"
+          },
+          {
+            "testId": "test-login-button-enabled",
+            "testName": "Login button is not disabled",
+            "passed": true,
+            "duration": 14
+          },
+          {
+            "testId": "test-responsive-mobile",
+            "testName": "Layout is responsive on mobile",
+            "passed": true,
+            "duration": 23
+          },
+          {
+            "testId": "test-form-labels",
+            "testName": "Form fields have associated labels",
+            "passed": true,
+            "duration": 3
+          },
+          {
+            "testId": "test-color-contrast",
+            "testName": "Text has sufficient color contrast",
+            "passed": true,
+            "duration": 5
+          }
+        ],
+        "overallPassed": false,
+        "timestamp": "2026-02-08T08:21:36.183Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:21:36.382Z"
+  },
+  {
+    "id": "9e7b47ff-c97e-4ba1-8bdc-52bd0c538b7b",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T08:26:42.502Z",
+    "startedAt": "2026-02-08T08:26:42.503Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"]') to be visible\u001b[22m\n"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539208204-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770539213351.png"
+      ],
+      "executionTimeMs": 10843,
+      "error": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"]') to be visible\u001b[22m\n",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:26:53.483Z"
+    },
+    "completedAt": "2026-02-08T08:26:53.592Z"
+  },
+  {
+    "id": "cc891b1e-f204-47da-b462-faaa0cef4717",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T08:29:17.253Z",
+    "startedAt": "2026-02-08T08:29:17.254Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539363043-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539368562-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539369091-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539369866-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539369866-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539400136-05-final.png"
+      ],
+      "executionTimeMs": 42986,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:30:00.249Z",
+      "validationReport": {
+        "totalTests": 12,
+        "passedTests": 10,
+        "failedTests": 2,
+        "criticalFailures": 2,
+        "duration": 30140,
+        "results": [
+          {
+            "testId": "test-logo-visible",
+            "testName": "Logo is visible",
+            "passed": false,
+            "duration": 6,
+            "error": "Element not visible: img[alt*='logo'], img[alt*='Blocks'], .logo"
+          },
+          {
+            "testId": "test-login-form-visible",
+            "testName": "Login form is visible",
+            "passed": true,
+            "duration": 5
+          },
+          {
+            "testId": "test-email-input-visible",
+            "testName": "Email input field is visible",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-password-input-visible",
+            "testName": "Password input field is visible",
+            "passed": true,
+            "duration": 4
+          },
+          {
+            "testId": "test-login-button-visible",
+            "testName": "Login button is visible",
+            "passed": true,
+            "duration": 4
+          },
+          {
+            "testId": "test-page-title",
+            "testName": "Page has correct title",
+            "passed": true,
+            "duration": 3
+          },
+          {
+            "testId": "test-email-input-type",
+            "testName": "Email input has correct type",
+            "passed": false,
+            "duration": 30015,
+            "error": "Could not verify input type",
+            "expected": "email"
+          },
+          {
+            "testId": "test-password-input-type",
+            "testName": "Password input has correct type",
+            "passed": true,
+            "duration": 6,
+            "actual": "password",
+            "expected": "password"
+          },
+          {
+            "testId": "test-login-button-enabled",
+            "testName": "Login button is not disabled",
+            "passed": true,
+            "duration": 11
+          },
+          {
+            "testId": "test-responsive-mobile",
+            "testName": "Layout is responsive on mobile",
+            "passed": true,
+            "duration": 34
+          },
+          {
+            "testId": "test-form-labels",
+            "testName": "Form fields have associated labels",
+            "passed": true,
+            "duration": 35
+          },
+          {
+            "testId": "test-color-contrast",
+            "testName": "Text has sufficient color contrast",
+            "passed": true,
+            "duration": 3
+          }
+        ],
+        "overallPassed": false,
+        "timestamp": "2026-02-08T08:30:00.135Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:30:00.371Z"
+  },
+  {
+    "id": "aa1545b5-5a92-406f-af01-8bbe8803005a",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T08:37:02.193Z",
+    "startedAt": "2026-02-08T08:37:02.194Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539830763-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539836342-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539836869-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539837755-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539837755-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770539868148-05-final.png"
+      ],
+      "executionTimeMs": 46084,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:37:48.284Z",
+      "validationReport": {
+        "totalTests": 12,
+        "passedTests": 10,
+        "failedTests": 2,
+        "criticalFailures": 2,
+        "duration": 30268,
+        "results": [
+          {
+            "testId": "test-logo-visible",
+            "testName": "Logo is visible",
+            "passed": false,
+            "duration": 26,
+            "error": "Element not visible: img[alt*='logo'], img[alt*='Blocks'], .logo"
+          },
+          {
+            "testId": "test-login-form-visible",
+            "testName": "Login form is visible",
+            "passed": true,
+            "duration": 76
+          },
+          {
+            "testId": "test-email-input-visible",
+            "testName": "Email input field is visible",
+            "passed": true,
+            "duration": 45
+          },
+          {
+            "testId": "test-password-input-visible",
+            "testName": "Password input field is visible",
+            "passed": true,
+            "duration": 8
+          },
+          {
+            "testId": "test-login-button-visible",
+            "testName": "Login button is visible",
+            "passed": true,
+            "duration": 5
+          },
+          {
+            "testId": "test-page-title",
+            "testName": "Page has correct title",
+            "passed": true,
+            "duration": 3
+          },
+          {
+            "testId": "test-email-input-type",
+            "testName": "Email input has correct type",
+            "passed": false,
+            "duration": 30016,
+            "error": "Could not verify input type",
+            "expected": "email"
+          },
+          {
+            "testId": "test-password-input-type",
+            "testName": "Password input has correct type",
+            "passed": true,
+            "duration": 5,
+            "actual": "password",
+            "expected": "password"
+          },
+          {
+            "testId": "test-login-button-enabled",
+            "testName": "Login button is not disabled",
+            "passed": true,
+            "duration": 12
+          },
+          {
+            "testId": "test-responsive-mobile",
+            "testName": "Layout is responsive on mobile",
+            "passed": true,
+            "duration": 24
+          },
+          {
+            "testId": "test-form-labels",
+            "testName": "Form fields have associated labels",
+            "passed": true,
+            "duration": 4
+          },
+          {
+            "testId": "test-color-contrast",
+            "testName": "Text has sufficient color contrast",
+            "passed": true,
+            "duration": 3
+          }
+        ],
+        "overallPassed": false,
+        "timestamp": "2026-02-08T08:37:48.147Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:37:48.396Z"
+  },
+  {
+    "id": "e18cf142-4fdb-4e76-b4b7-ac3fdefb63e2",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T08:40:08.091Z",
+    "startedAt": "2026-02-08T08:40:08.092Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540014103-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540019604-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540020066-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540020776-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540020776-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540022972-05-final.png"
+      ],
+      "executionTimeMs": 15000,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:40:23.099Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T08:40:22.971Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:40:23.192Z"
+  },
+  {
+    "id": "4df0653d-b451-4cd3-94fc-271cb7446c02",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T08:43:20.026Z",
+    "startedAt": "2026-02-08T08:43:20.027Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540206167-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540211732-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540212181-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540212917-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540212917-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540215039-05-final.png"
+      ],
+      "executionTimeMs": 15104,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:43:35.137Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T08:43:35.038Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:43:35.269Z"
+  },
+  {
+    "id": "2552a3b5-dbd8-4352-b1fd-633ee595a1b2",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T08:46:44.447Z",
+    "startedAt": "2026-02-08T08:46:44.449Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540410175-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540415656-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540416139-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540416877-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540416877-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540447203-05-final.png"
+      ],
+      "executionTimeMs": 42857,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:47:27.315Z",
+      "validationReport": {
+        "totalTests": 12,
+        "passedTests": 10,
+        "failedTests": 2,
+        "criticalFailures": 2,
+        "duration": 30214,
+        "results": [
+          {
+            "testId": "test-logo-visible",
+            "testName": "Logo is visible",
+            "passed": false,
+            "duration": 6,
+            "error": "Element not visible: img[alt*='logo'], img[alt*='Blocks'], .logo"
+          },
+          {
+            "testId": "test-login-form-visible",
+            "testName": "Login form is visible",
+            "passed": true,
+            "duration": 7
+          },
+          {
+            "testId": "test-email-input-visible",
+            "testName": "Email input field is visible",
+            "passed": true,
+            "duration": 10
+          },
+          {
+            "testId": "test-password-input-visible",
+            "testName": "Password input field is visible",
+            "passed": true,
+            "duration": 21
+          },
+          {
+            "testId": "test-login-button-visible",
+            "testName": "Login button is visible",
+            "passed": true,
+            "duration": 54
+          },
+          {
+            "testId": "test-page-title",
+            "testName": "Page has correct title",
+            "passed": true,
+            "duration": 62
+          },
+          {
+            "testId": "test-email-input-type",
+            "testName": "Email input has correct type",
+            "passed": false,
+            "duration": 30004,
+            "error": "Could not verify input type",
+            "expected": "email"
+          },
+          {
+            "testId": "test-password-input-type",
+            "testName": "Password input has correct type",
+            "passed": true,
+            "duration": 4,
+            "actual": "password",
+            "expected": "password"
+          },
+          {
+            "testId": "test-login-button-enabled",
+            "testName": "Login button is not disabled",
+            "passed": true,
+            "duration": 9
+          },
+          {
+            "testId": "test-responsive-mobile",
+            "testName": "Layout is responsive on mobile",
+            "passed": true,
+            "duration": 17
+          },
+          {
+            "testId": "test-form-labels",
+            "testName": "Form fields have associated labels",
+            "passed": true,
+            "duration": 4
+          },
+          {
+            "testId": "test-color-contrast",
+            "testName": "Text has sufficient color contrast",
+            "passed": true,
+            "duration": 4
+          }
+        ],
+        "overallPassed": false,
+        "timestamp": "2026-02-08T08:47:27.201Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:47:27.409Z"
+  },
+  {
+    "id": "4014a6ed-9b61-440b-a071-5d887e79cf40",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "running",
+    "createdAt": "2026-02-08T08:52:53.751Z",
+    "startedAt": "2026-02-08T08:52:53.753Z"
   }
 ]

@@ -165,8 +165,133 @@ async function runTest(
     // Check if page loaded successfully (2xx or 3xx status)
     pageLoadSuccess = response ? response.ok() : false;
 
-    // Wait for any dynamic content to load
-    await page.waitForLoadState("networkidle");
+    // Capture screenshot of login page
+    let screenshotPath = path.join(
+      process.cwd(),
+      "test-results",
+      `screenshot-${Date.now()}-01-login-page.png`
+    );
+    const screenshotDir = path.dirname(screenshotPath);
+    if (!fs.existsSync(screenshotDir)) {
+      fs.mkdirSync(screenshotDir, { recursive: true });
+    }
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    screenshots.push(screenshotPath);
+
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "screenshot",
+        timestamp: new Date().toISOString(),
+        data: { screenshotPath, success: true },
+      });
+    }
+
+    // Wait for email input field
+    try {
+      await page.waitForSelector('input[type="email"], input[name="email"]', { timeout: 5000 });
+      await page.fill('input[type="email"], input[name="email"]', "f1aring@yopmail.com");
+      console.log("✓ Email entered");
+    } catch (error) {
+      console.error("⚠ Email field not found or fill failed:", error);
+    }
+    
+    // Capture screenshot after email entry
+    await new Promise(resolve => setTimeout(resolve, 300));
+    screenshotPath = path.join(
+      process.cwd(),
+      "test-results",
+      `screenshot-${Date.now()}-02-email-entered.png`
+    );
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    screenshots.push(screenshotPath);
+
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "screenshot",
+        timestamp: new Date().toISOString(),
+        data: { screenshotPath, success: true },
+      });
+    }
+
+    // Wait for password input field
+    try {
+      await page.waitForSelector('input[type="password"], input[name="password"]', { timeout: 5000 });
+      await page.fill('input[type="password"], input[name="password"]', "@Rman1234");
+      console.log("✓ Password entered");
+    } catch (error) {
+      console.error("⚠ Password field not found or fill failed:", error);
+    }
+    
+    // Capture screenshot after password entry
+    await new Promise(resolve => setTimeout(resolve, 300));
+    screenshotPath = path.join(
+      process.cwd(),
+      "test-results",
+      `screenshot-${Date.now()}-03-password-entered.png`
+    );
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    screenshots.push(screenshotPath);
+
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "screenshot",
+        timestamp: new Date().toISOString(),
+        data: { screenshotPath, success: true },
+      });
+    }
+
+    // Wait for login button and click
+    try {
+      await page.waitForSelector('button[type="submit"], button:has-text("Login"), button:has-text("Sign In")', { timeout: 5000 });
+      const loginButton = await page.$('button[type="submit"], button:has-text("Login"), button:has-text("Sign In")');
+      if (loginButton) {
+        await loginButton.click();
+        console.log("✓ Login button clicked");
+      }
+
+      // Wait for navigation after login
+      try {
+        await page.waitForLoadState("networkidle", { timeout: timeout });
+      } catch (navError) {
+        console.error("⚠ Navigation timeout after login:", navError);
+        // Continue anyway
+      }
+    } catch (error) {
+      console.error("⚠ Login button not found or click failed:", error);
+    }
+    
+    // Capture screenshot after login
+    await new Promise(resolve => setTimeout(resolve, 500));
+    screenshotPath = path.join(
+      process.cwd(),
+      "test-results",
+      `screenshot-${Date.now()}-04-after-login.png`
+    );
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    screenshots.push(screenshotPath);
+
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "screenshot",
+        timestamp: new Date().toISOString(),
+        data: { screenshotPath, success: true },
+      });
+    }
+
+    screenshots.push(screenshotPath);
+
+    if (jobId) {
+      testEventBus.emitTestEvent({
+        jobId,
+        type: "screenshot",
+        timestamp: new Date().toISOString(),
+        data: { screenshotPath, success: true },
+      });
+    }
 
     // Run UI validation tests
     if (jobId) {
@@ -196,23 +321,16 @@ async function runTest(
         });
       }
     } catch (validationError) {
-      console.error("Validation tests failed:", validationError);
+      console.error("⚠ Validation tests failed:", validationError);
       // Continue even if validation fails - don't block test results
     }
 
-    // Take screenshot on success
-    const screenshotPath = path.join(
+    // Capture final screenshot
+    screenshotPath = path.join(
       process.cwd(),
       "test-results",
-      `screenshot-${Date.now()}.png`
+      `screenshot-${Date.now()}-05-final.png`
     );
-
-    // Ensure directory exists
-    const screenshotDir = path.dirname(screenshotPath);
-    if (!fs.existsSync(screenshotDir)) {
-      fs.mkdirSync(screenshotDir, { recursive: true });
-    }
-
     await page.screenshot({ path: screenshotPath, fullPage: true });
     screenshots.push(screenshotPath);
 

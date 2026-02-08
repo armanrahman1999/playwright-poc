@@ -1,18 +1,50 @@
 /**
- * In-Memory Job Queue Manager
+ * In-Memory Job Queue Manager with File Persistence
  * 
  * Manages test execution jobs with background processing.
- * Note: This is an in-memory store. For production, replace with
- * a persistent database (PostgreSQL, MongoDB, etc.)
+ * Persists to file to survive hot reloads.
  */
 
 import { Job, JobStore, JobStatus } from "./types";
+import fs from "fs";
+import path from "path";
 
 class InMemoryJobStore implements JobStore {
   jobs: Map<string, Job> = new Map();
+  private jobsFilePath: string;
+
+  constructor() {
+    this.jobsFilePath = path.join(process.cwd(), ".jobs-store.json");
+    this.loadFromFile();
+  }
+
+  private loadFromFile(): void {
+    try {
+      if (fs.existsSync(this.jobsFilePath)) {
+        const data = fs.readFileSync(this.jobsFilePath, "utf-8");
+        const jobsArray = JSON.parse(data);
+        this.jobs.clear();
+        jobsArray.forEach((job: Job) => {
+          this.jobs.set(job.id, job);
+        });
+      }
+    } catch (error) {
+      console.error("Failed to load jobs from file:", error);
+    }
+  }
+
+  private saveToFile(): void {
+    try {
+      const jobsArray = Array.from(this.jobs.values());
+      fs.writeFileSync(this.jobsFilePath, JSON.stringify(jobsArray, null, 2));
+    } catch (error) {
+      console.error("Failed to save jobs to file:", error);
+    }
+  }
 
   addJob(job: Job): void {
     this.jobs.set(job.id, job);
+    this.saveToFile();
   }
 
   getJob(id: string): Job | undefined {
@@ -23,6 +55,7 @@ class InMemoryJobStore implements JobStore {
     const job = this.jobs.get(id);
     if (job) {
       this.jobs.set(id, { ...job, ...updates });
+      this.saveToFile();
     }
   }
 
@@ -53,6 +86,7 @@ class InMemoryJobStore implements JobStore {
       }
     }
 
+    this.saveToFile();
     return cleared;
   }
 }
