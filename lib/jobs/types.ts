@@ -17,6 +17,7 @@ export interface TestResult {
   url?: string;
   timestamp: string;
   validationReport?: UIValidationReport;
+  videoPath?: string;
 }
 
 export interface Job {

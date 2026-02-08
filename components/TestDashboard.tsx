@@ -239,7 +239,7 @@ export default function TestDashboard() {
                           <p className="text-white font-medium truncate">
                             {job.targetUrl}
                           </p>
-                          <p className="text-xs text-slate-400 mt-1">
+                          <p className="text-xs text-slate-400 mt-1" suppressHydrationWarning>
                             {new Date(job.createdAt).toLocaleString()}
                           </p>
                         </div>
@@ -438,14 +438,14 @@ export default function TestDashboard() {
                       )}
 
                       <div className="text-xs text-slate-400 space-y-1 pt-4 border-t border-slate-700">
-                        <p>Created: {new Date(selectedJob.createdAt).toLocaleString()}</p>
+                        <p suppressHydrationWarning>Created: {new Date(selectedJob.createdAt).toLocaleString()}</p>
                         {selectedJob.startedAt && (
-                          <p>
+                          <p suppressHydrationWarning>
                             Started: {new Date(selectedJob.startedAt).toLocaleString()}
                           </p>
                         )}
                         {selectedJob.completedAt && (
-                          <p>
+                          <p suppressHydrationWarning>
                             Completed:{" "}
                             {new Date(selectedJob.completedAt).toLocaleString()}
                           </p>

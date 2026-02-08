@@ -866,8 +866,646 @@
   {
     "id": "4014a6ed-9b61-440b-a071-5d887e79cf40",
     "targetUrl": "https://cloud.seliseblocks.com/login",
-    "status": "running",
+    "status": "failed",
     "createdAt": "2026-02-08T08:52:53.751Z",
-    "startedAt": "2026-02-08T08:52:53.753Z"
+    "startedAt": "2026-02-08T08:52:53.753Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540780619-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540786145-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540786765-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540787614-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540787614-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540817883-05-final.png"
+      ],
+      "executionTimeMs": 44322,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T08:53:38.108Z",
+      "validationReport": {
+        "totalTests": 12,
+        "passedTests": 10,
+        "failedTests": 2,
+        "criticalFailures": 2,
+        "duration": 30117,
+        "results": [
+          {
+            "testId": "test-logo-visible",
+            "testName": "Logo is visible",
+            "passed": false,
+            "duration": 7,
+            "error": "Element not visible: img[alt*='logo'], img[alt*='Blocks'], .logo"
+          },
+          {
+            "testId": "test-login-form-visible",
+            "testName": "Login form is visible",
+            "passed": true,
+            "duration": 16
+          },
+          {
+            "testId": "test-email-input-visible",
+            "testName": "Email input field is visible",
+            "passed": true,
+            "duration": 5
+          },
+          {
+            "testId": "test-password-input-visible",
+            "testName": "Password input field is visible",
+            "passed": true,
+            "duration": 4
+          },
+          {
+            "testId": "test-login-button-visible",
+            "testName": "Login button is visible",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-page-title",
+            "testName": "Page has correct title",
+            "passed": true,
+            "duration": 8
+          },
+          {
+            "testId": "test-email-input-type",
+            "testName": "Email input has correct type",
+            "passed": false,
+            "duration": 30004,
+            "error": "Could not verify input type",
+            "expected": "email"
+          },
+          {
+            "testId": "test-password-input-type",
+            "testName": "Password input has correct type",
+            "passed": true,
+            "duration": 3,
+            "actual": "password",
+            "expected": "password"
+          },
+          {
+            "testId": "test-login-button-enabled",
+            "testName": "Login button is not disabled",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-responsive-mobile",
+            "testName": "Layout is responsive on mobile",
+            "passed": true,
+            "duration": 44
+          },
+          {
+            "testId": "test-form-labels",
+            "testName": "Form fields have associated labels",
+            "passed": true,
+            "duration": 3
+          },
+          {
+            "testId": "test-color-contrast",
+            "testName": "Text has sufficient color contrast",
+            "passed": true,
+            "duration": 3
+          }
+        ],
+        "overallPassed": false,
+        "timestamp": "2026-02-08T08:53:37.881Z"
+      }
+    },
+    "completedAt": "2026-02-08T08:53:38.216Z"
+  },
+  {
+    "id": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:07:21.290Z",
+    "startedAt": "2026-02-08T09:07:21.292Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541651582-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541657197-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541657737-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541658659-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541658659-04-after-login.png"
+      ],
+      "executionTimeMs": 20844,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:07:42.170Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:07:41.902Z"
+      },
+      "videoPath": "/recordings/session-7592e02d-a3d9-46a9-8b80-174cc804d62f-1770541662035.webm"
+    },
+    "completedAt": "2026-02-08T09:07:42.528Z"
+  },
+  {
+    "id": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:09:48.528Z",
+    "startedAt": "2026-02-08T09:09:48.530Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541794315-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541799801-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541800483-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541801184-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541801184-04-after-login.png"
+      ],
+      "executionTimeMs": 16029,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:10:04.581Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:10:04.417Z"
+      },
+      "videoPath": "/recordings/session-1d393a80-e8e1-4aec-b1ce-510382525168-1770541804428.webm"
+    },
+    "completedAt": "2026-02-08T09:10:05.002Z"
+  },
+  {
+    "id": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:11:38.411Z",
+    "startedAt": "2026-02-08T09:11:38.412Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541904493-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541908600-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541910875-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541914601-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541914601-04-after-login.png"
+      ],
+      "executionTimeMs": 19573,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:11:58.018Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:11:57.867Z"
+      },
+      "videoPath": "/recordings/session-48997d66-53ba-4fc9-b1cc-98f45629ff72-1770541917884.webm"
+    },
+    "completedAt": "2026-02-08T09:11:58.942Z"
+  },
+  {
+    "id": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:13:29.028Z",
+    "startedAt": "2026-02-08T09:13:29.030Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "level": "error",
+          "message": "[2026-02-08T09:13:46.047Z] Error: Failed to complete negotiation with the server: Error: : Status code '401'"
+        },
+        {
+          "level": "error",
+          "message": "[2026-02-08T09:13:46.048Z] Error: Failed to start the connection: Error: Failed to complete negotiation with the server: Error: : Status code '401'"
+        },
+        {
+          "level": "error",
+          "message": "Uncaught: Failed to complete negotiation with the server: Error: : Status code '401'"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542015467-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542019446-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542021747-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542030155-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542030155-04-after-login.png"
+      ],
+      "executionTimeMs": 24655,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:13:53.723Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:13:53.577Z"
+      },
+      "videoPath": "/recordings/session-79952cfc-9738-4c0d-866c-28e2bc97d7c8-1770542033585.webm"
+    },
+    "completedAt": "2026-02-08T09:13:54.668Z"
+  },
+  {
+    "id": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:15:34.049Z",
+    "startedAt": "2026-02-08T09:15:34.050Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542140015-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542144131-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542146367-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542151310-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542151310-04-after-login.png"
+      ],
+      "executionTimeMs": 20799,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:15:54.880Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:15:54.735Z"
+      },
+      "videoPath": "/recordings/session-d13b4f2c-ea95-454e-a9db-a68814f4ee04-1770542154748.webm"
+    },
+    "completedAt": "2026-02-08T09:15:55.895Z"
+  },
+  {
+    "id": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:17:42.181Z",
+    "startedAt": "2026-02-08T09:17:42.183Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542268465-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542272583-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542274839-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542282127-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542282127-04-after-login.png"
+      ],
+      "executionTimeMs": 23278,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:18:05.498Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:18:05.336Z"
+      },
+      "videoPath": "/recordings/session-9ddad241-1ddd-404d-8a1c-a9ce111b3b2a-1770542285348.webm"
+    },
+    "completedAt": "2026-02-08T09:18:06.366Z"
+  },
+  {
+    "id": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:21:36.518Z",
+    "startedAt": "2026-02-08T09:21:36.519Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542502493-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542506477-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542508885-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542515235-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542515235-04-after-login.png"
+      ],
+      "executionTimeMs": 22149,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:21:58.701Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:21:58.553Z"
+      },
+      "videoPath": "/recordings/session-4fbbafcc-a840-4a3e-8fcf-46e76efbf72f-1770542518561.webm"
+    },
+    "completedAt": "2026-02-08T09:21:59.595Z"
+  },
+  {
+    "id": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-08T09:24:32.722Z",
+    "startedAt": "2026-02-08T09:24:32.724Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542678834-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542682897-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542685126-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542691817-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542691817-04-after-login.png"
+      ],
+      "executionTimeMs": 22417,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:24:55.173Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:24:55.004Z"
+      },
+      "videoPath": "/recordings/session-7256f3fb-6228-4306-9062-2edb741bf179-1770542695015.webm"
+    },
+    "completedAt": "2026-02-08T09:24:55.864Z"
+  },
+  {
+    "id": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:27:43.271Z",
+    "startedAt": "2026-02-08T09:27:43.273Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542869408-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542873607-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542876139-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770542882165.png"
+      ],
+      "executionTimeMs": 18884,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:28:02.297Z"
+    },
+    "completedAt": "2026-02-08T09:28:03.072Z"
+  },
+  {
+    "id": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:28:13.643Z",
+    "startedAt": "2026-02-08T09:28:13.645Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542901980-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542906043-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542908368-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770542915661.png"
+      ],
+      "executionTimeMs": 22012,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:28:35.792Z"
+    },
+    "completedAt": "2026-02-08T09:28:36.649Z"
+  },
+  {
+    "id": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:30:17.271Z",
+    "startedAt": "2026-02-08T09:30:17.273Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543023518-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543027818-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543030268-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770543036220.png"
+      ],
+      "executionTimeMs": 18938,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:30:36.359Z"
+    },
+    "completedAt": "2026-02-08T09:30:37.376Z"
+  },
+  {
+    "id": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:31:24.277Z",
+    "startedAt": "2026-02-08T09:31:24.279Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543092554-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543096758-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543099315-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770543105429.png"
+      ],
+      "executionTimeMs": 21116,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:31:45.743Z"
+    },
+    "completedAt": "2026-02-08T09:31:46.630Z"
+  },
+  {
+    "id": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:50:01.085Z",
+    "startedAt": "2026-02-08T09:50:01.086Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544210647-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544215462-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544218506-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770544225989.png"
+      ],
+      "executionTimeMs": 24898,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:50:26.099Z"
+    },
+    "completedAt": "2026-02-08T09:50:26.943Z"
+  },
+  {
+    "id": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:54:22.897Z",
+    "startedAt": "2026-02-08T09:54:22.899Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544469011-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544471068-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544473488-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770544480427.png"
+      ],
+      "executionTimeMs": 17521,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:54:40.550Z"
+    },
+    "completedAt": "2026-02-08T09:54:41.276Z"
+  },
+  {
+    "id": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T09:58:42.014Z",
+    "startedAt": "2026-02-08T09:58:42.016Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544728042-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544729854-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544732229-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770544738329.png"
+      ],
+      "executionTimeMs": 16306,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T09:58:58.462Z"
+    },
+    "completedAt": "2026-02-08T09:58:59.076Z"
+  },
+  {
+    "id": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T10:00:27.888Z",
+    "startedAt": "2026-02-08T10:00:27.890Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544836645-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544838662-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544841184-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770544847684.png"
+      ],
+      "executionTimeMs": 19787,
+      "error": "File URL path must be absolute",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T10:00:47.811Z"
+    },
+    "completedAt": "2026-02-08T10:00:48.732Z"
+  },
+  {
+    "id": "c305443c-419f-419b-a404-c57670679111",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T10:04:14.020Z",
+    "startedAt": "2026-02-08T10:04:14.022Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770545060181-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770545062219-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770545064543-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770545070587.png"
+      ],
+      "executionTimeMs": 16517,
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T10:04:30.735Z"
+    },
+    "completedAt": "2026-02-08T10:04:31.849Z"
   }
 ]

@@ -1208,5 +1208,1481 @@
     "data": {
       "message": "Starting UI validation tests..."
     }
+  },
+  {
+    "jobId": "4014a6ed-9b61-440b-a071-5d887e79cf40",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T08:53:37.881Z",
+    "data": {
+      "totalTests": 12,
+      "passed": 10,
+      "failed": 2,
+      "report": {
+        "totalTests": 12,
+        "passedTests": 10,
+        "failedTests": 2,
+        "criticalFailures": 2,
+        "duration": 30117,
+        "results": [
+          {
+            "testId": "test-logo-visible",
+            "testName": "Logo is visible",
+            "passed": false,
+            "duration": 7,
+            "error": "Element not visible: img[alt*='logo'], img[alt*='Blocks'], .logo"
+          },
+          {
+            "testId": "test-login-form-visible",
+            "testName": "Login form is visible",
+            "passed": true,
+            "duration": 16
+          },
+          {
+            "testId": "test-email-input-visible",
+            "testName": "Email input field is visible",
+            "passed": true,
+            "duration": 5
+          },
+          {
+            "testId": "test-password-input-visible",
+            "testName": "Password input field is visible",
+            "passed": true,
+            "duration": 4
+          },
+          {
+            "testId": "test-login-button-visible",
+            "testName": "Login button is visible",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-page-title",
+            "testName": "Page has correct title",
+            "passed": true,
+            "duration": 8
+          },
+          {
+            "testId": "test-email-input-type",
+            "testName": "Email input has correct type",
+            "passed": false,
+            "duration": 30004,
+            "error": "Could not verify input type",
+            "expected": "email"
+          },
+          {
+            "testId": "test-password-input-type",
+            "testName": "Password input has correct type",
+            "passed": true,
+            "duration": 3,
+            "actual": "password",
+            "expected": "password"
+          },
+          {
+            "testId": "test-login-button-enabled",
+            "testName": "Login button is not disabled",
+            "passed": true,
+            "duration": 6
+          },
+          {
+            "testId": "test-responsive-mobile",
+            "testName": "Layout is responsive on mobile",
+            "passed": true,
+            "duration": 44
+          },
+          {
+            "testId": "test-form-labels",
+            "testName": "Form fields have associated labels",
+            "passed": true,
+            "duration": 3
+          },
+          {
+            "testId": "test-color-contrast",
+            "testName": "Text has sufficient color contrast",
+            "passed": true,
+            "duration": 3
+          }
+        ],
+        "overallPassed": false,
+        "timestamp": "2026-02-08T08:53:37.881Z"
+      }
+    }
+  },
+  {
+    "jobId": "4014a6ed-9b61-440b-a071-5d887e79cf40",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T08:53:38.082Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770540817883-05-final.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "4014a6ed-9b61-440b-a071-5d887e79cf40",
+    "type": "completed",
+    "timestamp": "2026-02-08T08:53:38.084Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 44322,
+      "errorCount": 0
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "started",
+    "timestamp": "2026-02-08T09:07:21.615Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:07:22.064Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:07:31.843Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541651582-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:07:37.304Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541657197-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:07:38.018Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541657737-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:07:38.776Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541658659-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:07:38.778Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541658659-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:07:38.802Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:07:41.901Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:07:42.141Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:07:41.902Z"
+      }
+    }
+  },
+  {
+    "jobId": "7592e02d-a3d9-46a9-8b80-174cc804d62f",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:07:42.143Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 20844,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-7592e02d-a3d9-46a9-8b80-174cc804d62f-1770541662035.webm"
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "started",
+    "timestamp": "2026-02-08T09:09:48.776Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:09:48.908Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:09:54.471Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541794315-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:10:00.081Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541799801-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:10:00.597Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541800483-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:10:01.344Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541801184-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:10:01.345Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541801184-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:10:01.366Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:10:04.415Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:10:04.562Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:10:04.417Z"
+      }
+    }
+  },
+  {
+    "jobId": "1d393a80-e8e1-4aec-b1ce-510382525168",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:10:04.563Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 16029,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-1d393a80-e8e1-4aec-b1ce-510382525168-1770541804428.webm"
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "started",
+    "timestamp": "2026-02-08T09:11:38.836Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:11:38.976Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:11:44.662Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541904493-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:11:48.720Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541908600-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:11:51.096Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541910875-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:11:54.782Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541914601-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:11:54.784Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770541914601-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:11:54.815Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:11:57.865Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:11:57.987Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:11:57.867Z"
+      }
+    }
+  },
+  {
+    "jobId": "48997d66-53ba-4fc9-b1cc-98f45629ff72",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:11:57.990Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 19573,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-48997d66-53ba-4fc9-b1cc-98f45629ff72-1770541917884.webm"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "started",
+    "timestamp": "2026-02-08T09:13:29.334Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:13:29.504Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:13:35.645Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542015467-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:13:39.569Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542019446-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:13:41.849Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542021747-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "console-error",
+    "timestamp": "2026-02-08T09:13:46.049Z",
+    "data": {
+      "level": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 ()"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "console-error",
+    "timestamp": "2026-02-08T09:13:46.053Z",
+    "data": {
+      "level": "error",
+      "message": "[2026-02-08T09:13:46.047Z] Error: Failed to complete negotiation with the server: Error: : Status code '401'"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "console-error",
+    "timestamp": "2026-02-08T09:13:46.073Z",
+    "data": {
+      "level": "error",
+      "message": "[2026-02-08T09:13:46.048Z] Error: Failed to start the connection: Error: Failed to complete negotiation with the server: Error: : Status code '401'"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "console-error",
+    "timestamp": "2026-02-08T09:13:46.094Z",
+    "data": {
+      "level": "error",
+      "message": "Uncaught: Failed to complete negotiation with the server: Error: : Status code '401'"
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:13:50.495Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542030155-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:13:50.497Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542030155-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:13:50.528Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:13:53.575Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:13:53.690Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:13:53.577Z"
+      }
+    }
+  },
+  {
+    "jobId": "79952cfc-9738-4c0d-866c-28e2bc97d7c8",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:13:53.692Z",
+    "data": {
+      "passed": false,
+      "executionTimeMs": 24655,
+      "errorCount": 4,
+      "videoPath": "/recordings/session-79952cfc-9738-4c0d-866c-28e2bc97d7c8-1770542033585.webm"
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "started",
+    "timestamp": "2026-02-08T09:15:34.331Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:15:34.488Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:15:40.174Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542140015-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:15:44.232Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542144131-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:15:46.629Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542146367-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:15:51.655Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542151310-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:15:51.659Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542151310-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:15:51.694Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:15:54.734Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:15:54.852Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:15:54.735Z"
+      }
+    }
+  },
+  {
+    "jobId": "d13b4f2c-ea95-454e-a9db-a68814f4ee04",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:15:54.854Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 20799,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-d13b4f2c-ea95-454e-a9db-a68814f4ee04-1770542154748.webm"
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "started",
+    "timestamp": "2026-02-08T09:17:42.480Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:17:42.637Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:17:48.780Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542268465-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:17:52.741Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542272583-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:17:54.940Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542274839-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:18:02.259Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542282127-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:18:02.261Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542282127-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:18:02.292Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:18:05.334Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:18:05.463Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:18:05.336Z"
+      }
+    }
+  },
+  {
+    "jobId": "9ddad241-1ddd-404d-8a1c-a9ce111b3b2a",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:18:05.466Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 23278,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-9ddad241-1ddd-404d-8a1c-a9ce111b3b2a-1770542285348.webm"
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "started",
+    "timestamp": "2026-02-08T09:21:36.816Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:21:36.915Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:21:42.639Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542502493-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:21:46.587Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542506477-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:21:49.021Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542508885-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:21:55.475Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542515235-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:21:55.477Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542515235-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:21:55.503Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:21:58.551Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:21:58.670Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:21:58.553Z"
+      }
+    }
+  },
+  {
+    "jobId": "4fbbafcc-a840-4a3e-8fcf-46e76efbf72f",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:21:58.672Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 22149,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-4fbbafcc-a840-4a3e-8fcf-46e76efbf72f-1770542518561.webm"
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "started",
+    "timestamp": "2026-02-08T09:24:33.036Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:24:33.183Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:24:38.979Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542678834-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:24:43.013Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542682897-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:24:45.399Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542685126-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:24:51.931Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542691817-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:24:51.933Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542691817-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "validation-started",
+    "timestamp": "2026-02-08T09:24:51.957Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "validation-progress",
+    "timestamp": "2026-02-08T09:24:55.002Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "validation-complete",
+    "timestamp": "2026-02-08T09:24:55.144Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-08T09:24:55.004Z"
+      }
+    }
+  },
+  {
+    "jobId": "7256f3fb-6228-4306-9062-2edb741bf179",
+    "type": "completed",
+    "timestamp": "2026-02-08T09:24:55.146Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 22417,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-7256f3fb-6228-4306-9062-2edb741bf179-1770542695015.webm"
+    }
+  },
+  {
+    "jobId": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "type": "started",
+    "timestamp": "2026-02-08T09:27:43.622Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:27:43.826Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:27:49.792Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542869408-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:27:53.904Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542873607-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:27:56.367Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542876139-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ca3fccd1-802f-4dfb-8c9b-45c1e782d709",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:28:02.295Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "type": "started",
+    "timestamp": "2026-02-08T09:28:13.960Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:28:14.053Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:28:22.150Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542901980-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:28:26.158Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542906043-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:28:28.636Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770542908368-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "298565b9-5774-46cb-9114-13bd42b71d02",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:28:35.789Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "type": "started",
+    "timestamp": "2026-02-08T09:30:17.703Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:30:17.801Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:30:23.852Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543023518-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:30:27.921Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543027818-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:30:30.408Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543030268-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "78d5405b-6c40-4255-af85-cbb49a26e7f5",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:30:36.357Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "type": "started",
+    "timestamp": "2026-02-08T09:31:24.638Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:31:24.765Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:31:32.880Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543092554-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:31:36.856Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543096758-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:31:39.553Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770543099315-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "b88c18d3-2cdc-4bff-9b99-b488baea3c53",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:31:45.741Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "type": "started",
+    "timestamp": "2026-02-08T09:50:01.537Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:50:01.868Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:50:10.892Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544210647-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:50:15.893Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544215462-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:50:18.749Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544218506-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "2597f06a-803c-4426-bb3b-9e0d999bb004",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:50:26.097Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "type": "started",
+    "timestamp": "2026-02-08T09:54:23.307Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:54:23.511Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:54:29.394Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544469011-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:54:31.281Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544471068-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:54:33.589Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544473488-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "e3d02360-e125-4a6e-a6c7-6a88393df9b9",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:54:40.548Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "type": "started",
+    "timestamp": "2026-02-08T09:58:42.338Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "type": "navigating",
+    "timestamp": "2026-02-08T09:58:42.440Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:58:48.223Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544728042-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:58:50.036Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544729854-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T09:58:52.359Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544732229-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "50a41017-111b-4e65-8cdd-33d3f937d41e",
+    "type": "failed",
+    "timestamp": "2026-02-08T09:58:58.460Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "type": "started",
+    "timestamp": "2026-02-08T10:00:28.264Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "type": "navigating",
+    "timestamp": "2026-02-08T10:00:28.369Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:00:36.979Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544836645-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:00:38.813Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544838662-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:00:41.287Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770544841184-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ee2a354e-b95b-4f80-8bb1-619384d1c0e2",
+    "type": "failed",
+    "timestamp": "2026-02-08T10:00:47.809Z",
+    "data": {
+      "error": "File URL path must be absolute"
+    }
+  },
+  {
+    "jobId": "c305443c-419f-419b-a404-c57670679111",
+    "type": "started",
+    "timestamp": "2026-02-08T10:04:14.415Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "c305443c-419f-419b-a404-c57670679111",
+    "type": "navigating",
+    "timestamp": "2026-02-08T10:04:14.586Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "c305443c-419f-419b-a404-c57670679111",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:04:20.531Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770545060181-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "c305443c-419f-419b-a404-c57670679111",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:04:22.310Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770545062219-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "c305443c-419f-419b-a404-c57670679111",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:04:24.733Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770545064543-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "c305443c-419f-419b-a404-c57670679111",
+    "type": "failed",
+    "timestamp": "2026-02-08T10:04:30.733Z",
+    "data": {
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)"
+    }
   }
 ]

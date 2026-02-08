@@ -29,6 +29,7 @@ export default function SplitViewDashboard({
   const [currentAction, setCurrentAction] = useState<string>("Initializing...");
   const [consoleErrors, setConsoleErrors] = useState<Array<{ level: string; message: string }>>([]);
   const [showConsolePanel, setShowConsolePanel] = useState(true);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
   useEffect(() => {
     console.log("[SplitViewDashboard] Component mounted with jobId:", jobId);
@@ -47,7 +48,7 @@ export default function SplitViewDashboard({
 
         switch (testEvent.type) {
           case "started":
-            setCurrentAction("🚀 Browser launching...");
+            setCurrentAction("🚀 Browser launching... (Recording Video)");
             break;
 
           case "navigating":
@@ -55,50 +56,36 @@ export default function SplitViewDashboard({
             break;
 
           case "screenshot":
+            // Legacy handling if screenshots are still sent
             const screenshotPath = testEvent.data.screenshotPath;
-            console.log("[SplitViewDashboard] Screenshot event received:", screenshotPath);
-            setCurrentAction("📸 Capturing page...");
             if (screenshotPath) {
-              const imagePath = `/api/screenshot?path=${encodeURIComponent(screenshotPath)}`;
-              console.log("[SplitViewDashboard] Setting image URL:", imagePath);
-              setCurrentScreenshot(imagePath);
-            } else {
-              console.warn("[SplitViewDashboard] No screenshot path in event data");
+               // Ignore screenshots in video mode, or keep as thumbnail
             }
             break;
 
           case "validation-started":
-            setCurrentAction("✓ Running validation tests...");
+            setCurrentAction("🎬 Starting automated tour...");
             break;
 
           case "validation-progress":
-            setCurrentAction(
-              `✓ Validation: ${testEvent.data.current}/${testEvent.data.total}`
+             setCurrentAction(
+              `🎬 Visiting page ${testEvent.data.current}/${testEvent.data.total}`
             );
             break;
 
           case "validation-complete":
-            setCurrentAction(
-              `✓ Validation complete: ${testEvent.data.passed}/${testEvent.data.totalTests}`
-            );
-            if (testEvent.data.report) {
-              setValidationReport(testEvent.data.report);
-            }
+            setCurrentAction("✅ Tour complete. Processing video...");
             break;
 
           case "console-error":
             setCurrentAction("⚠️ Console error detected");
-            setConsoleErrors((prev) => [
-              ...prev,
-              {
-                level: testEvent.data.level,
-                message: testEvent.data.message,
-              },
-            ]);
             break;
 
           case "completed":
-            setCurrentAction("✅ Test completed!");
+            setCurrentAction("✅ Session recorded!");
+            if (testEvent.data.videoPath) {
+                setVideoUrl(testEvent.data.videoPath);
+            }
             break;
 
           case "failed":
@@ -112,7 +99,7 @@ export default function SplitViewDashboard({
 
     eventSource.onerror = () => {
       console.error("SSE connection error");
-      setCurrentAction("❌ Connection lost");
+      // Don't change status on error, might just be end of stream
     };
 
     return () => {
@@ -129,32 +116,32 @@ export default function SplitViewDashboard({
         {isRunning && (
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-xs text-gray-400">LIVE</span>
+            <span className="text-xs text-gray-400">RECORDING</span>
           </div>
         )}
       </div>
 
       {/* Full Width Live UI Preview */}
-      <div className="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-700">
-        {currentScreenshot ? (
-          <div className="relative">
-            <img
-              src={currentScreenshot}
-              alt="Live UI preview"
-              className="w-full h-auto"
-              style={{ maxHeight: '600px', objectFit: 'contain' }}
-            />
-            {isRunning && (
-              <div className="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded text-xs font-bold animate-pulse">
-                LIVE
-              </div>
-            )}
-          </div>
+      <div className="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-700 min-h-[400px] flex flex-col justify-center items-center">
+        {videoUrl ? (
+             <div className="w-full">
+                <video controls autoPlay className="w-full h-auto max-h-[600px] mx-auto">
+                    <source src={videoUrl} type="video/webm" />
+                    Your browser does not support the video tag.
+                </video>
+             </div>
+        ) : isRunning ? (
+             <div className="text-center p-12">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-slate-600 border-t-blue-500 mb-4"></div>
+                <h3 className="text-xl font-semibold text-white mb-2">Recording in progress...</h3>
+                <p className="text-slate-400">The automated browser is touring the site.</p>
+                <p className="text-slate-500 text-sm mt-4">Video will appear here automatically when finished.</p>
+             </div>
         ) : (
           <div className="w-full h-96 flex items-center justify-center text-gray-400 bg-gray-900">
             <div className="text-center">
-              <div className="text-5xl mb-3">📱</div>
-              <p className="text-sm">Waiting for page to render...</p>
+              <div className="text-5xl mb-3">🎬</div>
+              <p className="text-sm">Video recording unavailable</p>
             </div>
           </div>
         )}
@@ -187,7 +174,8 @@ export default function SplitViewDashboard({
       )}
 
       {/* Validation Results - Full Width Below */}
-      <div className="border border-gray-200 rounded-lg p-4 bg-white">
+      <div className="border border-gray-200 rounded-lg p-4 bg-white hidden">
+        {/* Hidden for video mode */}
         {validationReport ? (
           <ValidationResults report={validationReport} />
         ) : (
