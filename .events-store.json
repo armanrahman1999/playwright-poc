@@ -2684,5 +2684,274 @@
     "data": {
       "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)"
     }
+  },
+  {
+    "jobId": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "type": "started",
+    "timestamp": "2026-02-08T10:42:06.449Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "type": "navigating",
+    "timestamp": "2026-02-08T10:42:06.760Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:42:13.625Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770547333473-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:42:15.612Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770547335516-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "type": "screenshot",
+    "timestamp": "2026-02-08T10:42:18.027Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770547337802-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "type": "failed",
+    "timestamp": "2026-02-08T10:42:23.961Z",
+    "data": {
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)"
+    }
+  },
+  {
+    "jobId": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "type": "started",
+    "timestamp": "2026-02-09T07:57:59.758Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "type": "navigating",
+    "timestamp": "2026-02-09T07:58:00.113Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T07:58:09.002Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770623888817-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T07:58:12.975Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770623892879-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T07:58:15.400Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770623895284-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "type": "failed",
+    "timestamp": "2026-02-09T07:58:21.216Z",
+    "data": {
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:974:28)"
+    }
+  },
+  {
+    "jobId": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "type": "started",
+    "timestamp": "2026-02-09T08:02:54.093Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "type": "navigating",
+    "timestamp": "2026-02-09T08:02:54.309Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:03:01.342Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624181100-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:03:06.040Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624185641-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:03:08.791Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624188551-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "type": "failed",
+    "timestamp": "2026-02-09T08:03:15.145Z",
+    "data": {
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:974:28)"
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "started",
+    "timestamp": "2026-02-09T08:08:55.023Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "navigating",
+    "timestamp": "2026-02-09T08:08:55.563Z",
+    "data": {
+      "targetUrl": "https://cloud.seliseblocks.com/login"
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:09:04.560Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624542560-01-login-page.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:09:09.533Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624549226-02-email-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:09:12.022Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624551924-03-password-entered.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "failed",
+    "timestamp": "2026-02-09T08:09:17.991Z",
+    "data": {
+      "error": "Login failed or timed out. Check debug screenshot."
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:09:18.937Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624558495-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "screenshot",
+    "timestamp": "2026-02-09T08:09:18.940Z",
+    "data": {
+      "screenshotPath": "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624558495-04-after-login.png",
+      "success": true
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "validation-started",
+    "timestamp": "2026-02-09T08:09:18.963Z",
+    "data": {
+      "message": "Starting automated page tour..."
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "validation-progress",
+    "timestamp": "2026-02-09T08:09:22.025Z",
+    "data": {
+      "current": 0,
+      "total": 0
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "validation-complete",
+    "timestamp": "2026-02-09T08:09:23.062Z",
+    "data": {
+      "totalTests": 0,
+      "passed": 0,
+      "failed": 0,
+      "report": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T08:09:22.027Z"
+      }
+    }
+  },
+  {
+    "jobId": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "type": "completed",
+    "timestamp": "2026-02-09T08:09:23.064Z",
+    "data": {
+      "passed": true,
+      "executionTimeMs": 28869,
+      "errorCount": 0,
+      "videoPath": "/recordings/session-5a937d07-c6a6-4a08-a470-37e6843abbf2-1770624562046.webm"
+    }
   }
 ]

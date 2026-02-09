@@ -1507,5 +1507,122 @@
       "timestamp": "2026-02-08T10:04:30.735Z"
     },
     "completedAt": "2026-02-08T10:04:31.849Z"
+  },
+  {
+    "id": "ab58fd84-ffd5-4a84-b047-49919922246a",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-08T10:42:05.921Z",
+    "startedAt": "2026-02-08T10:42:05.922Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770547333473-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770547335516-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770547337802-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770547343706.png"
+      ],
+      "executionTimeMs": 17779,
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:973:28)",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-08T10:42:23.963Z"
+    },
+    "completedAt": "2026-02-08T10:42:24.601Z"
+  },
+  {
+    "id": "0d5bc00a-8c74-4e81-8254-c8a99629de5e",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-09T07:57:58.979Z",
+    "startedAt": "2026-02-09T07:57:58.982Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:974:28)"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770623888817-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770623892879-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770623895284-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770623901093.png"
+      ],
+      "executionTimeMs": 22102,
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:974:28)",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T07:58:21.218Z"
+    },
+    "completedAt": "2026-02-09T07:58:22.100Z"
+  },
+  {
+    "id": "ba5a4c03-43fd-4325-a08b-6d2578223cf2",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "failed",
+    "createdAt": "2026-02-09T08:02:53.529Z",
+    "startedAt": "2026-02-09T08:02:53.530Z",
+    "result": {
+      "passed": false,
+      "pageLoadSuccess": false,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:974:28)"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624181100-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624185641-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624188551-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\error-screenshot-1770624194793.png"
+      ],
+      "executionTimeMs": 21253,
+      "error": "File URL path must be absolute\n\nStack Trace:\nTypeError: File URL path must be absolute\n    at getPathFromURLWin32 (node:internal/url:1489:11)\n    at Object.fileURLToPath (node:internal/url:1613:35)\n    at frameToString (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:96:59)\n    at parseAndSourceMap (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:340:41)\n    at sourceMapError (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:372:22)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:389:30\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:99:14)\n    at errorConstructor.<computed> (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\patch-error-inspect.js:388:67)\n    at formatValue (node:internal/util/inspect:897:19)\n    at inspect (node:internal/util/inspect:409:10)\n    at formatWithOptionsInternal (node:internal/util/inspect:2590:40)\n    at formatWithOptions (node:internal/util/inspect:2452:10)\n    at console.value (node:internal/console/constructor:345:14)\n    at console.error (node:internal/console/constructor:412:61)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-file.js:21:44)\n    at D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:95\n    at AsyncLocalStorage.exit (node:internal/async_local_storage/async_hooks:103:14)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-exit.js:22:71)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\server\\node-environment-extensions\\console-dim.external.js:208:47)\n    at console.error (D:\\playwright\\ui-observer\\node_modules\\next\\dist\\compiled\\next-server\\app-page-turbo.runtime.dev.js:25:79752)\n    at runTest (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:635:21)\n    at async Immediate.<anonymous> (D:\\playwright\\ui-observer\\.next\\dev\\server\\chunks\\[root-of-the-server]__26baa5f8._.js:974:28)",
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T08:03:15.147Z"
+    },
+    "completedAt": "2026-02-09T08:03:16.069Z"
+  },
+  {
+    "id": "5a937d07-c6a6-4a08-a470-37e6843abbf2",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T08:08:54.186Z",
+    "startedAt": "2026-02-09T08:08:54.188Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624542560-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624549226-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624551924-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624558495-04-after-login.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624558495-04-after-login.png"
+      ],
+      "executionTimeMs": 28869,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T08:09:23.089Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T08:09:22.027Z"
+      },
+      "videoPath": "/recordings/session-5a937d07-c6a6-4a08-a470-37e6843abbf2-1770624562046.webm"
+    },
+    "completedAt": "2026-02-09T08:09:23.687Z"
   }
 ]

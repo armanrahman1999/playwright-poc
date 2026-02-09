@@ -228,7 +228,7 @@ async function runTest(
           await emailInput.fill("f1aring@yopmail.com"); // Fill is faster/safer than type for value setting
           // But for video we want visual typing?
           // Let's clear and type
-          await emailInput.clear();
+          await emailInput.fill("");
           await emailInput.type("f1aring@yopmail.com", { delay: 100 });
           console.log("✓ Email entered");
       } else {
@@ -236,7 +236,7 @@ async function runTest(
       }
 
     } catch (error) {
-      console.error("⚠ Email field not found or fill failed:", error);
+      console.error("⚠ Email field not found or fill failed:", error instanceof Error ? error.message : String(error));
     }
     
     // Capture screenshot after email entry
@@ -270,7 +270,7 @@ async function runTest(
       await page.type(passwordSelector, "@Rman1234", { delay: 100 });
       console.log("✓ Password entered");
     } catch (error) {
-      console.error("⚠ Password field not found or fill failed:", error);
+      console.error("⚠ Password field not found or fill failed:", error instanceof Error ? error.message : String(error));
     }
     
     // Capture screenshot after password entry
@@ -367,7 +367,7 @@ async function runTest(
       }
 
     } catch (error) {
-      console.error("⚠ Submit/Navigation failed:", error);
+      console.error("⚠ Submit/Navigation failed:", error instanceof Error ? error.message : String(error));
       
       // Take a debug screenshot specifically for login failure
        const debugPath = path.join(process.cwd(), "test-results", `debug-login-fail-${Date.now()}.png`);
@@ -507,12 +507,12 @@ async function runTest(
             });
 
         } catch (navError) {
-          console.error(`Failed to visit ${link.href}:`, navError);
+          console.error(`Failed to visit ${link.href}:`, navError instanceof Error ? navError.message : String(navError));
         }
       }
 
     } catch (tourError) {
-      console.error("⚠ Page tour failed:", tourError);
+      console.error("⚠ Page tour failed:", tourError instanceof Error ? tourError.message : String(tourError));
     }
     
     // Legacy support since we removed validation
@@ -549,12 +549,15 @@ async function runTest(
                 videoPath = `/recordings/${fileName}`;
                 console.log(`Video saved successfully via saveAs to ${videoPath}`);
             } catch (saveAsError) {
-                console.log("saveAs failed, falling back to manual copy:", saveAsError);
+                // Log only message to avoid Next.js source-map crashes on Windows with file:// URLs
+                console.log("saveAs failed, falling back to manual copy:", saveAsError instanceof Error ? saveAsError.message : String(saveAsError));
                 
                 try {
                     // Fallback to manual path copy
                     let originalPath = await videoObj.path();
-                    console.log(`Original video path: ${originalPath}`);
+                    // Sanitize path for logging to prevent Next.js console crash
+                    const sanitizedLogPath = originalPath.replace(/file:\/\//g, 'file_protocol_');
+                    console.log(`Original video path: ${sanitizedLogPath}`);
                     
                     // Manual path cleanup for file:// URLs
                     if (originalPath.startsWith('file:')) {
@@ -578,14 +581,14 @@ async function runTest(
                         console.error(`Original video file not found at ${originalPath}`);
                     }
                 } catch (copyError) {
-                     console.error("Manual copy failed:", copyError);
+                     console.error("Manual copy failed:", copyError instanceof Error ? copyError.message : String(copyError));
                 }
             }
         } else {
             console.log("No video object found for page.");
         }
     } catch (videoError) {
-        console.error("CRITICAL VIDEO ERROR:", videoError);
+        console.error("CRITICAL VIDEO ERROR:", videoError instanceof Error ? videoError.message : String(videoError));
         // Do NOT rethrow. Video failure is non-fatal for the test result.
     }
 
@@ -655,7 +658,7 @@ async function runTest(
         await state.page.screenshot({ path: errorScreenshotPath, fullPage: true });
         screenshots.push(errorScreenshotPath);
       } catch (screenshotError) {
-        console.error("Failed to capture error screenshot:", screenshotError);
+        console.error("Failed to capture error screenshot:", screenshotError instanceof Error ? screenshotError.message : String(screenshotError));
       }
     }
 
@@ -680,14 +683,12 @@ async function runTest(
     };
   } finally {
     // Always clean up resources
-    if (state.page) {
-      await state.page.close().catch((e) => console.error("Error closing page:", e));
-    }
-    if (state.context) {
-      await state.context.close().catch((e) => console.error("Error closing context:", e));
-    }
-    if (state.browser) {
-      await state.browser.close().catch((e) => console.error("Error closing browser:", e));
+    try {
+        if (state.page) await state.page.close();
+        if (state.context) await state.context.close();
+        if (state.browser) await state.browser.close();
+    } catch (cleanupError) {
+        console.error("Cleanup error:", cleanupError instanceof Error ? cleanupError.message : String(cleanupError));
     }
   }
 }

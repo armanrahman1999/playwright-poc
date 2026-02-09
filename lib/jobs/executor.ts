@@ -52,7 +52,9 @@ export async function executeJobInBackground(job: Job): Promise<void> {
         completedAt: new Date().toISOString(),
       });
 
-      console.error(`✗ Job ${job.id} failed:`, errorMessage);
+      // Log only the message to console to prevent Next.js source-map crashes with file:// URLs
+      const consoleMsg = error instanceof Error ? error.message : String(error); 
+      console.error(`✗ Job ${job.id} failed:`, consoleMsg);
     }
   });
 }
