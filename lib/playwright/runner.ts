@@ -508,11 +508,41 @@ async function runTest(
             await element.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
             
             if (await element.isVisible()) {
+                console.log(`Clicking ${item}...`);
                 await element.click();
-                console.log(`✓ Clicked ${item}`);
+
+                // 1. Minimum Stability Wait:
+                // Ensure the click registers and the app starts reacting (skeletons mount, etc.)
+                await page.waitForTimeout(2000);
+
+                // 2. Wait for Loaders/Skeletons "Trap"
+                // We wait briefly for a skeleton to APIEAR. If it appears, we then wait for it to DISAPPEAR.
+                try {
+                     const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"], [role="progressbar"], [data-loading="true"]';
+                     
+                     // Check if a skeleton is visible NOW or appears within 2 seconds
+                     const skeletonAppeared = await page.waitForSelector(skeletonSelector, { state: 'visible', timeout: 2000 }).catch(() => null);
+                     
+                     if (skeletonAppeared) {
+                        console.log("Skeleton/Loader detected. Waiting for data...");
+                        await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 15000 });
+                        console.log("✓ Data loaded (loader vanished)");
+                     } else {
+                         console.log("No skeleton appeared (content might be cached or static)");
+                     }
+                } catch (e) {
+                    console.log("Loader check bypassed");
+                }
+
+                // 3. Fallback Network Idle
+                // Just in case no skeleton is used but requests are flying
+                await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+
+                console.log(`✓ Section ${item} ready`);
                 
-                // "wait couple of seconds" for loading
-                await page.waitForTimeout(3000);
+                // Final visual pause as requested
+                await page.waitForTimeout(2000);
+
             } else {
                 console.warn(`⚠ Sidebar item '${item}' not found (skipping)`);
             }
@@ -533,6 +563,55 @@ async function runTest(
     } catch (tourError) {
       console.error("⚠ Project tour failed:", tourError instanceof Error ? tourError.message : String(tourError));
     }
+
+    // Enter Development Environment
+    if (jobId) {
+        testEventBus.emitTestEvent({
+           jobId,
+           type: "navigating",
+           timestamp: new Date().toISOString(),
+           data: { targetUrl: "Environment: Development" },
+       });
+   }
+
+   try {
+       console.log("Searching for 'Development' environment...");
+       await page.waitForTimeout(1000);
+       
+       // Find "Development" text (likely a card title or link)
+       const devEnv = page.getByText('Development', { exact: false }).first();
+       
+       if (await devEnv.isVisible()) {
+            await devEnv.click();
+            console.log("✓ Clicked 'Development'");
+            
+            // Wait for navigation to dashboard
+            try {
+                await page.waitForURL('**/dashboard*', { timeout: 20000, waitUntil: 'domcontentloaded' });
+                console.log("✓ Successfully navigated to Dashboard");
+                
+                // Wait for dashboard content
+                await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+                
+                // Check for skeletons on dashboard
+                try {
+                     const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"]';
+                     if (await page.$(skeletonSelector)) {
+                         await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 10000 });
+                     }
+                } catch (e) {}
+                
+                // Final visual capture
+                await page.waitForTimeout(2000);
+            } catch (navError) {
+                 console.warn("⚠ Navigation to dashboard timeout:", navError instanceof Error ? navError.message : String(navError));
+            }
+       } else {
+           console.warn("⚠ 'Development' text not found on Environments page");
+       }
+   } catch (devError) {
+        console.error("⚠ Failed to enter Development environment:", devError instanceof Error ? devError.message : String(devError));
+   }
     
     // Legacy support since we removed validation
     const validationReport = {

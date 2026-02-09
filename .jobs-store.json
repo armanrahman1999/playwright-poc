@@ -1725,5 +1725,170 @@
       "videoPath": "/recordings/session-06c3391a-8309-41a4-acf7-b56405d48f76-1770627270597.webm"
     },
     "completedAt": "2026-02-09T08:54:31.349Z"
+  },
+  {
+    "id": "fa1c6bcb-bb7f-48f8-a881-092112d7ef18",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T09:08:26.127Z",
+    "startedAt": "2026-02-09T09:08:26.129Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628116704-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628121087-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628123551-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628130025-04-after-login.png"
+      ],
+      "executionTimeMs": 32183,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T09:08:58.348Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T09:08:57.726Z"
+      },
+      "videoPath": "/recordings/session-fa1c6bcb-bb7f-48f8-a881-092112d7ef18-1770628137738.webm"
+    },
+    "completedAt": "2026-02-09T09:08:58.546Z"
+  },
+  {
+    "id": "02539f57-812e-4345-96ea-9d12175b1f47",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T09:11:59.873Z",
+    "startedAt": "2026-02-09T09:11:59.874Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628326706-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628331461-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628334106-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628341145-04-after-login.png"
+      ],
+      "executionTimeMs": 45931,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T09:12:45.837Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T09:12:44.846Z"
+      },
+      "videoPath": "/recordings/session-02539f57-812e-4345-96ea-9d12175b1f47-1770628364864.webm"
+    },
+    "completedAt": "2026-02-09T09:12:46.382Z"
+  },
+  {
+    "id": "d4fce99a-b24b-4611-9129-56f210311786",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T09:16:23.718Z",
+    "startedAt": "2026-02-09T09:16:23.719Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628590457-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628595059-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628597407-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770628604234-04-after-login.png"
+      ],
+      "executionTimeMs": 53564,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T09:17:17.311Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T09:17:15.926Z"
+      },
+      "videoPath": "/recordings/session-d4fce99a-b24b-4611-9129-56f210311786-1770628635936.webm"
+    },
+    "completedAt": "2026-02-09T09:17:17.673Z"
+  },
+  {
+    "id": "08d27f6a-4f3e-427a-951b-fe73b26ba62c",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T10:14:07.201Z",
+    "startedAt": "2026-02-09T10:14:07.203Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632057052-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632061785-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632064848-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632071862-04-after-login.png"
+      ],
+      "executionTimeMs": 57567,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T10:15:04.795Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T10:15:03.454Z"
+      },
+      "videoPath": "/recordings/session-08d27f6a-4f3e-427a-951b-fe73b26ba62c-1770632103499.webm"
+    },
+    "completedAt": "2026-02-09T10:15:05.190Z"
+  },
+  {
+    "id": "eebf0a53-9ebb-4f7d-9d58-4c2b13308f83",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T10:21:36.032Z",
+    "startedAt": "2026-02-09T10:21:36.034Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "Failed to load resource: the server responded with a status of 400 ()"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632515635-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632520114-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632522626-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770632529333-04-after-login.png"
+      ],
+      "executionTimeMs": 70267,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T10:22:46.331Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T10:22:45.724Z"
+      },
+      "videoPath": "/recordings/session-eebf0a53-9ebb-4f7d-9d58-4c2b13308f83-1770632565733.webm"
+    },
+    "completedAt": "2026-02-09T10:22:46.595Z"
   }
 ]
