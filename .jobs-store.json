@@ -1890,5 +1890,87 @@
       "videoPath": "/recordings/session-eebf0a53-9ebb-4f7d-9d58-4c2b13308f83-1770632565733.webm"
     },
     "completedAt": "2026-02-09T10:22:46.595Z"
+  },
+  {
+    "id": "180a87f8-ea19-4b5c-8842-8a3cddf1d72f",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T10:38:51.560Z",
+    "startedAt": "2026-02-09T10:38:51.561Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "Failed to load resource: the server responded with a status of 400 ()"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633554591-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633559442-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633562017-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633568846-04-after-login.png"
+      ],
+      "executionTimeMs": 76753,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T10:40:08.342Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T10:40:07.629Z"
+      },
+      "videoPath": "/recordings/session-180a87f8-ea19-4b5c-8842-8a3cddf1d72f-1770633607638.webm"
+    },
+    "completedAt": "2026-02-09T10:40:08.425Z"
+  },
+  {
+    "id": "f1a48e72-2066-4109-bede-285cbd98304e",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T10:44:16.560Z",
+    "startedAt": "2026-02-09T10:44:16.562Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "Failed to load resource: the server responded with a status of 400 ()"
+        },
+        {
+          "level": "error",
+          "message": "Failed to load resource: the server responded with a status of 500 ()"
+        },
+        {
+          "level": "error",
+          "message": "Failed to load resource: the server responded with a status of 500 ()"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633872033-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633876896-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633879905-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770633886853-04-after-login.png"
+      ],
+      "executionTimeMs": 81152,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T10:45:37.747Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T10:45:37.085Z"
+      },
+      "videoPath": "/recordings/session-f1a48e72-2066-4109-bede-285cbd98304e-1770633937173.webm"
+    },
+    "completedAt": "2026-02-09T10:45:38.228Z"
   }
 ]

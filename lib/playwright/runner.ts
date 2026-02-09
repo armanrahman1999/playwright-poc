@@ -612,6 +612,106 @@ async function runTest(
    } catch (devError) {
         console.error("⚠ Failed to enter Development environment:", devError instanceof Error ? devError.message : String(devError));
    }
+
+   // Explore Dashboard Sidebar (Comprehensive Crawler)
+   try {
+        if (jobId) {
+            testEventBus.emitTestEvent({
+            jobId,
+            type: "validation-started",
+            timestamp: new Date().toISOString(),
+            data: { message: "Starting sidebar traversal..." },
+            });
+        }
+
+        console.log("Starting comprehensive sidebar tour...");
+        await page.waitForTimeout(2000);
+
+        const visitedItems = new Set<string>();
+        const maxActions = 30; // Safety limit
+        
+        // Loop to dynamically discover and visit items (handling expansion)
+        for (let i = 0; i < maxActions; i++) {
+            
+            // 1. Scan visible sidebar items
+            const visibleItems = await page.evaluate(() => {
+                // Find the sidebar container
+                const sidebar = document.querySelector('aside') || document.querySelector('nav') || document.querySelector('[class*="sidebar"]');
+                if (!sidebar) return [];
+
+                // Collect all potentially clickable items (links and toggles)
+                // We use specific selectors to avoid grabbing hidden sub-menus that aren't visible yet
+                // checking clientHeight > 0 ensures they are visible
+                const elements = Array.from(sidebar.querySelectorAll('a, button, div[role="button"], .menu-item'));
+                
+                return elements
+                    .filter(el =>  el.clientHeight > 0 && el.innerText.trim().length > 1)
+                    .map(el => ({
+                        text: el.innerText.split('\n')[0].trim(), // Clean text (remove badges/arrows)
+                        href: el.getAttribute('href'),
+                        isLink: el.tagName === 'A'
+                    }))
+                    .filter(item => 
+                        !item.text.toLowerCase().includes('log out') && 
+                        !item.text.toLowerCase().includes('sign out')
+                    );
+            });
+
+            // 2. Find the first unvisited item
+            // We use text as primary key, fallback to href if available for uniqueness
+            const candidate = visibleItems.find(item => {
+                const key = item.href ? `LINK:${item.text}|${item.href}` : `BTN:${item.text}`;
+                return !visitedItems.has(key);
+            });
+
+            if (!candidate) {
+                console.log("✓ All visible sidebar items visited.");
+                break;
+            }
+
+            // 3. Visit the candidate
+            const uniqueKey = candidate.href ? `LINK:${candidate.text}|${candidate.href}` : `BTN:${candidate.text}`;
+            visitedItems.add(uniqueKey);
+
+            console.log(`Sidebar [${i+1}/${maxActions}]: Interacting with '${candidate.text}'`);
+            
+            if (jobId) {
+                testEventBus.emitTestEvent({
+                   jobId, 
+                   type: "validation-progress",
+                   timestamp: new Date().toISOString(),
+                   data: {  current: i + 1, total: "dynamic", message: `Visiting ${candidate.text}` } 
+                });
+             }
+
+            // Click logic
+            try {
+                // We use getByText with exact: false to match "Observability" even if it has an arrow icon
+                const locator = page.getByText(candidate.text, { exact: false }).first();
+                if (await locator.isVisible()) {
+                    await locator.click();
+                    
+                    // 4. Wait for Reaction (Expand or Navigate)
+                    await page.waitForTimeout(2000); // Valid wait for expansion animation or nav start
+
+                    // Smart wait for loading
+                    await page.waitForLoadState('networkidle', { timeout: 3000 }).catch(() => {});
+                    
+                     // Check for skeletons
+                    const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"]';
+                    if (await page.$(skeletonSelector)) {
+                        await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 5000 });
+                        await page.waitForTimeout(1000); // Pause after load
+                    }
+                }
+            } catch (interactionError) {
+                console.warn(`⚠ Could not interact with '${candidate.text}':`, interactionError instanceof Error ? interactionError.message : String(interactionError));
+            }
+        }
+
+   } catch (dashboardError) {
+       console.error("⚠ Dashboard exploration failed:", dashboardError instanceof Error ? dashboardError.message : String(dashboardError));
+   }
     
     // Legacy support since we removed validation
     const validationReport = {
