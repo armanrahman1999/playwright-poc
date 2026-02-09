@@ -1624,5 +1624,106 @@
       "videoPath": "/recordings/session-5a937d07-c6a6-4a08-a470-37e6843abbf2-1770624562046.webm"
     },
     "completedAt": "2026-02-09T08:09:23.687Z"
+  },
+  {
+    "id": "97fe5212-b261-418f-9c45-ef52fc3655ac",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T08:13:29.898Z",
+    "startedAt": "2026-02-09T08:13:29.900Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624817357-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624821976-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624824582-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770624831549-04-after-login.png"
+      ],
+      "executionTimeMs": 40507,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T08:14:10.442Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T08:14:09.823Z"
+      },
+      "videoPath": "/recordings/session-97fe5212-b261-418f-9c45-ef52fc3655ac-1770624849892.webm"
+    },
+    "completedAt": "2026-02-09T08:14:10.559Z"
+  },
+  {
+    "id": "739d65a5-4f38-439f-a11d-a3532a2890d3",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T08:49:08.139Z",
+    "startedAt": "2026-02-09T08:49:08.141Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770626957396-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770626961992-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770626964609-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770626973150-04-after-login.png"
+      ],
+      "executionTimeMs": 42578,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T08:49:50.745Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T08:49:50.111Z"
+      },
+      "videoPath": "/recordings/session-739d65a5-4f38-439f-a11d-a3532a2890d3-1770626990120.webm"
+    },
+    "completedAt": "2026-02-09T08:49:51.053Z"
+  },
+  {
+    "id": "06c3391a-8309-41a4-acf7-b56405d48f76",
+    "targetUrl": "https://cloud.seliseblocks.com/login",
+    "status": "completed",
+    "createdAt": "2026-02-09T08:53:49.086Z",
+    "startedAt": "2026-02-09T08:53:49.088Z",
+    "result": {
+      "passed": true,
+      "pageLoadSuccess": true,
+      "consoleErrors": [
+        {
+          "level": "error",
+          "message": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        }
+      ],
+      "screenshots": [
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770627236685-01-login-page.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770627241463-02-email-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770627243920-03-password-entered.png",
+        "D:\\playwright\\ui-observer\\test-results\\screenshot-1770627250616-04-after-login.png"
+      ],
+      "executionTimeMs": 42139,
+      "url": "https://cloud.seliseblocks.com/login",
+      "timestamp": "2026-02-09T08:54:31.253Z",
+      "validationReport": {
+        "totalTests": 0,
+        "passedTests": 0,
+        "failedTests": 0,
+        "criticalFailures": 0,
+        "results": [],
+        "overallPassed": true,
+        "timestamp": "2026-02-09T08:54:30.590Z"
+      },
+      "videoPath": "/recordings/session-06c3391a-8309-41a4-acf7-b56405d48f76-1770627270597.webm"
+    },
+    "completedAt": "2026-02-09T08:54:31.349Z"
   }
 ]

@@ -402,117 +402,136 @@ async function runTest(
       });
     }
 
-    screenshots.push(screenshotPath);
-
+    // Specific Action: Select Project "Siuuu"
     if (jobId) {
-      testEventBus.emitTestEvent({
+        testEventBus.emitTestEvent({
         jobId,
-        type: "screenshot",
+        type: "navigating",
         timestamp: new Date().toISOString(),
-        data: { screenshotPath, success: true },
-      });
+        data: { targetUrl: "Project: Siuuu" },
+        });
     }
 
-    // Run UI Page Tour (Discovery & Visit)
+    try {
+        console.log("Searching for project 'Siuuu'...");
+        // Wait for dashboard content to settle
+        await page.waitForTimeout(3000);
+        
+        // Try to find by text content - using strict mode false to match partial or nested
+        // Common pattern for project cards
+        const projectFound = await page.getByText('Siuuu', { exact: false }).first().isVisible().catch(() => false);
+        
+        if (projectFound) {
+            console.log("✓ Project 'Siuuu' found. Clicking...");
+            await page.getByText('Siuuu', { exact: false }).first().click();
+            
+            // Wait for navigation
+            try {
+                await page.waitForURL('**/project-overview/environments**', { timeout: 20000, waitUntil: 'domcontentloaded' });
+                console.log("✓ Successfully navigated to Project Overview");
+                
+                // Add screenshot of project page
+                const projectScreenshotPath = path.join(
+                    process.cwd(), 
+                    "test-results", 
+                    `screenshot-${Date.now()}-05-project-view.png`
+                );
+                await page.screenshot({ path: projectScreenshotPath, fullPage: true });
+                
+                if (jobId) {
+                    testEventBus.emitTestEvent({
+                        jobId,
+                        type: "validation-progress",
+                        timestamp: new Date().toISOString(),
+                        data: { 
+                            current: 1, 
+                            total: 1,
+                            message: "Entered Project: Siuuu" 
+                        },
+                    });
+                }
+            } catch (navWaitError) {
+                 console.warn("⚠ Clicked project but navigation timeout:", navWaitError instanceof Error ? navWaitError.message : String(navWaitError));
+            }
+        } else {
+            console.warn("⚠ Project 'Siuuu' not found on dashboard.");
+        }
+    } catch (projectError) {
+            console.error("⚠ Failed to navigate to project 'Siuuu':", projectError instanceof Error ? projectError.message : String(projectError));
+    }
+
+// Run UI Page Tour (Project Specific Sidebar)
     if (jobId) {
       testEventBus.emitTestEvent({
         jobId,
         type: "validation-started",
         timestamp: new Date().toISOString(),
-        data: { message: "Starting automated page tour..." },
+        data: { message: "Starting project sidebar navigation..." },
       });
     }
 
-    const visitedUrls = new Set<string>();
-    visitedUrls.add(page.url()); // Add current
-
     try {
-      // Small pause to ensure menu is fully rendered and animated
-      await page.waitForTimeout(3000);
+      // Small pause to ensure menu is fully rendered
+      await page.waitForTimeout(2000);
 
-      // Collect links from navigation areas
-      const links = await page.evaluate(() => {
-        // Broad selector to find navigation items
-        const anchors = Array.from(document.querySelectorAll('nav a, [class*="sidebar"] a, [class*="menu"] a, aside a, header a'));
-        return anchors
-          .map(a => ({
-            href: a.href,
-            text: a.innerText || a.getAttribute('aria-label') || 'Link'
-          }))
-          .filter(link => 
-            link.href && 
-            !link.href.toLowerCase().includes('logout') && 
-            !link.href.toLowerCase().includes('signout') && 
-            !link.href.startsWith('javascript:') &&
-            !link.href.includes('#')
-          );
-      });
-
-      console.log(`Found ${links.length} potential navigation links`);
+      // Specific sequence requested: Settings -> Repositories -> People -> Environments
+      const sidebarItems = ["Settings", "Repositories", "People", "Environments"];
       
-      // Filter duplicates
-      const uniqueLinks = [];
-      const seenHrefs = new Set();
-      for (const link of links) {
-        if (!seenHrefs.has(link.href) && !visitedUrls.has(link.href)) {
-          seenHrefs.add(link.href);
-          uniqueLinks.push(link);
-        }
-      }
-
-      // Limit tour length
-      const tourLinks = uniqueLinks.slice(0, 8); // Visit up to 8 pages
-
       if (jobId) {
         testEventBus.emitTestEvent({
-          jobId,
-          type: "validation-progress",
-          timestamp: new Date().toISOString(),
-          data: { 
-            current: 0, 
-            total: tourLinks.length 
-          },
+            jobId,
+            type: "validation-progress",
+            timestamp: new Date().toISOString(),
+            data: { current: 0, total: sidebarItems.length },
         });
       }
 
-      for (let i = 0; i < tourLinks.length; i++) {
-        const link = tourLinks[i];
-        
-        // Notify navigation
+      for (let i = 0; i < sidebarItems.length; i++) {
+        const item = sidebarItems[i];
+        console.log(`Navigating to sidebar item: ${item}`);
+
         if (jobId) {
-          testEventBus.emitTestEvent({
-            jobId,
-            type: "navigating",
-            timestamp: new Date().toISOString(),
-            data: { targetUrl: link.href },
-          });
+            testEventBus.emitTestEvent({
+                jobId,
+                type: "navigating",
+                timestamp: new Date().toISOString(),
+                data: { targetUrl: `Sidebar: ${item}` },
+            });
         }
 
         try {
-          console.log(`Touring: ${link.text} -> ${link.href}`);
-          await page.goto(link.href, { waitUntil: "domcontentloaded", timeout: 20000 });
-          
-          // Visual pause for video recording
-          await page.waitForTimeout(2000);
-
-            // Update progress
+            // Locate by text - flexible matching
+            // We search specifically for standard navigation text
+            const element = page.getByText(item, { exact: false }).first();
+            
+            // Wait briefly for it to be actionable
+            await element.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+            
+            if (await element.isVisible()) {
+                await element.click();
+                console.log(`✓ Clicked ${item}`);
+                
+                // "wait couple of seconds" for loading
+                await page.waitForTimeout(3000);
+            } else {
+                console.warn(`⚠ Sidebar item '${item}' not found (skipping)`);
+            }
+        } catch (stepError) {
+             console.error(`⚠ Failed to click '${item}':`, stepError instanceof Error ? stepError.message : String(stepError));
+        }
+        
+        if (jobId) {
             testEventBus.emitTestEvent({
-              jobId,
-              type: "validation-progress",
-              timestamp: new Date().toISOString(),
-              data: { 
-                current: i + 1, 
-                total: tourLinks.length 
-              },
+                jobId,
+                type: "validation-progress",
+                timestamp: new Date().toISOString(),
+                data: { current: i + 1, total: sidebarItems.length },
             });
-
-        } catch (navError) {
-          console.error(`Failed to visit ${link.href}:`, navError instanceof Error ? navError.message : String(navError));
         }
       }
 
     } catch (tourError) {
-      console.error("⚠ Page tour failed:", tourError instanceof Error ? tourError.message : String(tourError));
+      console.error("⚠ Project tour failed:", tourError instanceof Error ? tourError.message : String(tourError));
     }
     
     // Legacy support since we removed validation
