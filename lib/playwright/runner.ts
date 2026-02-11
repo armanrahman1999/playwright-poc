@@ -174,10 +174,26 @@ async function runTest(
       });
     }
 
-    const response = await page.goto(targetUrl, {
-      waitUntil: "networkidle",
-      timeout: timeout,
-    });
+    let response;
+    try {
+      response = await page.goto(targetUrl, {
+        waitUntil: "domcontentloaded",
+        timeout: timeout,
+      });
+    } catch (gotoError) {
+      console.warn("⚠ Page goto timed out, attempting with relaxed conditions...");
+      // Fallback: retry with a shorter timeout and load state
+      try {
+        response = await page.goto(targetUrl, {
+          waitUntil: "load",
+          timeout: 15000,
+        });
+      } catch (fallbackError) {
+        console.error("⚠ Navigation failed even with fallback:", fallbackError instanceof Error ? fallbackError.message : String(fallbackError));
+        // Continue anyway - page may have partially loaded
+        response = null;
+      }
+    }
 
     // Check if page loaded successfully (2xx or 3xx status)
     pageLoadSuccess = response ? response.ok() : false;
@@ -585,23 +601,39 @@ async function runTest(
             await devEnv.click();
             console.log("✓ Clicked 'Development'");
             
+            // 1. Minimum Stability Wait
+            // Ensure the click registers and the app starts reacting (skeletons mount, etc.)
+            await page.waitForTimeout(2000);
+            
+            // 2. Wait for Loaders/Skeletons "Trap"
+            // We wait briefly for a skeleton to APPEAR. If it appears, we then wait for it to DISAPPEAR.
+            try {
+                 const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"], [role="progressbar"], [data-loading="true"]';
+                 
+                 console.log("Waiting for environment loader to appear...");
+                 // Check if a skeleton is visible NOW or appears within 3 seconds
+                 const skeletonAppeared = await page.waitForSelector(skeletonSelector, { state: 'visible', timeout: 3000 }).catch(() => null);
+                 
+                 if (skeletonAppeared) {
+                    console.log("Environment loader detected. Waiting for development environment to load...");
+                    await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 20000 });
+                    console.log("✓ Development environment data loaded (loader vanished)");
+                 } else {
+                     console.log("No skeleton appeared (environment data might be cached or static)");
+                 }
+            } catch (e) {
+                console.log("Loader check bypassed or timed out");
+            }
+            
             // Wait for navigation to dashboard
             try {
                 await page.waitForURL('**/dashboard*', { timeout: 20000, waitUntil: 'domcontentloaded' });
                 console.log("✓ Successfully navigated to Dashboard");
                 
-                // Wait for dashboard content
+                // Fallback network idle in case additional requests are in flight
                 await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
                 
-                // Check for skeletons on dashboard
-                try {
-                     const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"]';
-                     if (await page.$(skeletonSelector)) {
-                         await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 10000 });
-                     }
-                } catch (e) {}
-                
-                // Final visual capture
+                // Final visual pause
                 await page.waitForTimeout(2000);
             } catch (navError) {
                  console.warn("⚠ Navigation to dashboard timeout:", navError instanceof Error ? navError.message : String(navError));
@@ -691,18 +723,35 @@ async function runTest(
                 if (await locator.isVisible()) {
                     await locator.click();
                     
-                    // 4. Wait for Reaction (Expand or Navigate)
-                    await page.waitForTimeout(2000); // Valid wait for expansion animation or nav start
+                    // 1. Initial Pause: Allow navigation/expansion to start fully
+                    // "My Services" and others might take a moment to trigger the skeleton state
+                    await page.waitForTimeout(3000);
 
-                    // Smart wait for loading
-                    await page.waitForLoadState('networkidle', { timeout: 3000 }).catch(() => {});
-                    
-                     // Check for skeletons
-                    const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"]';
-                    if (await page.$(skeletonSelector)) {
-                        await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 5000 });
-                        await page.waitForTimeout(1000); // Pause after load
+                    // 2. Skeleton Trap: Explicitly wait for loading indicators to appear then disappear
+                    // Broadened selector to catch spinners, skeletons, progress bars
+                    try {
+                        const skeletonSelector = '[class*="skeleton"], [class*="Skeleton"], [class*="loading"], [role="progressbar"], [data-testid*="skeleton"], [data-testid*="loading"], .spinner, .loader, svg[class*="spin"]';
+                        
+                        // Check if skeleton appears within 3s (increased from 2s)
+                        const skeleton = await page.waitForSelector(skeletonSelector, { state: 'visible', timeout: 3000 }).catch(() => null);
+                        
+                        if (skeleton) {
+                            console.log(`Loading state detected for '${candidate.text}'. Waiting for completion...`);
+                            // Wait for the skeleton to go away
+                            await page.waitForSelector(skeletonSelector, { state: 'hidden', timeout: 30000 });
+                            console.log("✓ Content loaded.");
+                        } else {
+                            console.log(`No specific loader detected for '${candidate.text}' within 3s.`);
+                        }
+                    } catch (e) {
+                         // Ignore
                     }
+
+                    // 3. Fallback Network Wait (Safety net for data fetching without skeletons)
+                    await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+                    
+                     // 4. Final Visual Pause: Let user see the loaded content clearly
+                    await page.waitForTimeout(2000); 
                 }
             } catch (interactionError) {
                 console.warn(`⚠ Could not interact with '${candidate.text}':`, interactionError instanceof Error ? interactionError.message : String(interactionError));
